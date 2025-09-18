@@ -1,5 +1,8 @@
 about # 🚀 Zinnol Backend - Enterprise Education Management System
 
+[![Backend Tests](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml)
+![Coverage](https://codecov.io/gh/chukwuma7703/Zinnol-App-Phase1-Full/branch/main/graph/badge.svg?flag=backend)
+
 [![Node.js](https://img.shields.io/badge/Node.js-v22.0.0-green)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-v7.0-green)](https://www.mongodb.com)
 [![Redis](https://img.shields.io/badge/Redis-v7.0-red)](https://redis.io)
