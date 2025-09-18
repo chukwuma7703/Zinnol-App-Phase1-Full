@@ -1,7 +1,7 @@
 # 🎓 **Zinnol App - Smart Education Management Platform**
 
-[![Backend Tests](https://github.com/OWNER/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/OWNER/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml)
-[![codecov](https://codecov.io/gh/OWNER/Zinnol-App-Phase1-Full/branch/main/graph/badge.svg)](https://codecov.io/gh/OWNER/Zinnol-App-Phase1-Full)
+[![Backend Tests](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml)
+[![codecov](https://codecov.io/gh/chukwuma7703/Zinnol-App-Phase1-Full/branch/main/graph/badge.svg)](https://codecov.io/gh/chukwuma7703/Zinnol-App-Phase1-Full)
 [![Node.js Version](https://img.shields.io/badge/node-22.x-brightgreen.svg)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -72,7 +72,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/OWNER/Zinnol-App-Phase1-Full.git
+git clone https://github.com/chukwuma7703/Zinnol-App-Phase1-Full.git
 cd Zinnol-App-Phase1-Full
 
 # Install backend dependencies
@@ -264,9 +264,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 **Support**
 
-- **Documentation:** [Wiki](https://github.com/OWNER/Zinnol-App-Phase1-Full/wiki)
-- **Issues:** [GitHub Issues](https://github.com/OWNER/Zinnol-App-Phase1-Full/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/OWNER/Zinnol-App-Phase1-Full/discussions)
+- **Documentation:** [Wiki](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/wiki)
+- **Issues:** [GitHub Issues](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/discussions)
 - **Email:** support@zinnol.com
 
 ---
