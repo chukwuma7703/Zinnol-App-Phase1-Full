@@ -1,4 +1,4 @@
-about # 🚀 Zinnol Backend - Enterprise Education Management System
+# 🚀 Zinnol Backend - Enterprise Education Management System
 
 [![Backend Tests](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/chukwuma7703/Zinnol-App-Phase1-Full/actions/workflows/backend-tests.yml)
 ![Coverage](https://codecov.io/gh/chukwuma7703/Zinnol-App-Phase1-Full/branch/main/graph/badge.svg?flag=backend)
