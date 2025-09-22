@@ -1,0 +1,113 @@
+name: CI - Zinnol App (Lint + Test)
+
+on:
+  push:
+    branches: [ main, develop, test/final-codecov-validation ]
+  pull_request:
+    branches: [ main, develop, test/final-codecov-validation ]
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x] # Using Node 22 as per project requirements
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js with caching
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'backend/package-lock.json'
+
+      # 3. Install dependencies (backend only)
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm ci
+
+      # 4. Lint check (same as Husky pre-commit)
+      - name: Run linter
+        working-directory: ./backend
+        run: npm run lint
+
+      # 5. Run smoke tests (fast feedback)
+      - name: Run smoke tests
+        working-directory: ./backend
+        run: npm run test:smoke -- --reporters=default --reporters=jest-junit
+        env:
+          JEST_JUNIT_OUTPUT_DIR: coverage
+          JEST_JUNIT_OUTPUT_NAME: junit-smoke.xml
+
+      # 6. Run unit tests
+      - name: Run unit tests
+        working-directory: ./backend
+        run: npm run test:unit:focused -- --reporters=default --reporters=jest-junit
+        env:
+          JEST_JUNIT_OUTPUT_DIR: coverage
+          JEST_JUNIT_OUTPUT_NAME: junit-unit.xml
+
+      # 7. Upload test results
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.node-version }}
+          path: |
+            backend/coverage/junit-smoke.xml
+            backend/coverage/junit-unit.xml
+
+      # 8. Basic load test (optional, runs on main branch only)
+      - name: Run basic load test
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/test/final-codecov-validation'
+        working-directory: ./backend
+        run: |
+          npm install -g artillery@latest
+          echo '{
+            "config": {
+              "target": "http://localhost:5000",
+              "phases": [
+                {"duration": 10, "arrivalRate": 5}
+              ]
+            },
+            "scenarios": [
+              {
+                "name": "Health check load test",
+                "requests": [
+                  {"get": {"url": "/healthz"}},
+                  {"get": {"url": "/version"}}
+                ]
+              }
+            ]
+          }' > load-test.yml
+          # Start server in background
+          npm run start &
+          SERVER_PID=$!
+          sleep 10
+          # Run load test
+          artillery run load-test.yml --output load-test-results.json || true
+          # Cleanup
+          kill $SERVER_PID || true
+        env:
+          NODE_ENV: test
+          MONGO_URI: mongodb://127.0.0.1:27017/zinnolTest
+          REDIS_URL: redis://127.0.0.1:6379
+          JWT_SECRET: test-secret-key-for-ci
+          FIREBASE_ENABLED: false
+          GOOGLE_DRIVE_ENABLED: false
+
+      # 9. Upload load test results
+      - name: Upload load test results
+        if: always() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/test/final-codecov-validation')
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-results
+          path: backend/load-test-results.json

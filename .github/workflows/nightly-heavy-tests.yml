@@ -1,0 +1,73 @@
+name: Nightly Heavy Tests
+
+on:
+  schedule:
+    # Run at 2 AM UTC daily
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allow manual triggering
+
+permissions:
+  contents: read
+
+jobs:
+  heavy-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: 'backend/package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run comprehensive test suite
+        run: npm run test:all
+        env:
+          NODE_ENV: test
+          JEST_TIMEOUT: 60000
+
+      - name: Run heavy integration tests
+        run: npm run test:heavy
+        continue-on-error: true
+
+      - name: Run performance benchmarks
+        run: npm run benchmark
+        continue-on-error: true
+
+      - name: Generate comprehensive coverage
+        run: npm run test:coverage:detailed
+
+      - name: Upload comprehensive coverage
+        uses: codecov/codecov-action@v3
+        with:
+          directory: backend/coverage
+          flags: nightly,comprehensive
+          name: zinnol-backend-nightly
+          fail_ci_if_error: false
+
+      - name: Upload nightly test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nightly-test-results
+          path: |
+            backend/coverage/**
+            backend/test-results/**
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Nightly tests failed. Check the logs for details."
+          echo "This is expected during development and won't block releases."
