@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="758" failures="0" errors="0" time="126.482">
+  <testsuite name="Education Platform Integration Tests" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:03" time="8.022" tests="6">
+    <testcase classname="Education Platform Integration Tests Complete Education Workflow should create a complete school ecosystem with all relationships" name="Education Platform Integration Tests Complete Education Workflow should create a complete school ecosystem with all relationships" time="1.409">
+    </testcase>
+    <testcase classname="Education Platform Integration Tests Complete Education Workflow should handle classroom capacity constraints" name="Education Platform Integration Tests Complete Education Workflow should handle classroom capacity constraints" time="1.795">
+    </testcase>
+    <testcase classname="Education Platform Integration Tests Complete Education Workflow should maintain referential integrity across models" name="Education Platform Integration Tests Complete Education Workflow should maintain referential integrity across models" time="0.521">
+    </testcase>
+    <testcase classname="Education Platform Integration Tests Complete Education Workflow should handle complex exam and question relationships" name="Education Platform Integration Tests Complete Education Workflow should handle complex exam and question relationships" time="0.513">
+    </testcase>
+    <testcase classname="Education Platform Integration Tests Data Consistency and Constraints should prevent duplicate exam invigilator assignments" name="Education Platform Integration Tests Data Consistency and Constraints should prevent duplicate exam invigilator assignments" time="0.497">
+    </testcase>
+    <testcase classname="Education Platform Integration Tests Data Consistency and Constraints should maintain unique assignment-student submissions" name="Education Platform Integration Tests Data Consistency and Constraints should maintain unique assignment-student submissions" time="0.918">
+    </testcase>
+  </testsuite>
+  <testsuite name="analysisController unit (mocked models)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:11" time="1.291" tests="38">
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions getSystemWideAnalytics missing session exposes details" name="analysisController unit (mocked models) ValidationError detail assertions getSystemWideAnalytics missing session exposes details" time="0.011">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions getSystemWideAnalytics invalid session format details" name="analysisController unit (mocked models) ValidationError detail assertions getSystemWideAnalytics invalid session format details" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions getTeacherAnalytics missing session details" name="analysisController unit (mocked models) ValidationError detail assertions getTeacherAnalytics missing session details" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions queryStudents multiple validation errors aggregated" name="analysisController unit (mocked models) ValidationError detail assertions queryStudents multiple validation errors aggregated" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions createShareableLink missing both type &amp; targetId aggregates two errors" name="analysisController unit (mocked models) ValidationError detail assertions createShareableLink missing both type &amp; targetId aggregates two errors" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions school dashboard missing session &amp; invalid school id" name="analysisController unit (mocked models) ValidationError detail assertions school dashboard missing session &amp; invalid school id" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions school dashboard invalid term format" name="analysisController unit (mocked models) ValidationError detail assertions school dashboard invalid term format" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions teacher activity invalid dates + bad school" name="analysisController unit (mocked models) ValidationError detail assertions teacher activity invalid dates + bad school" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions timetable compliance missing required endDate" name="analysisController unit (mocked models) ValidationError detail assertions timetable compliance missing required endDate" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) ValidationError detail assertions createShareableLink invalid targetId format" name="analysisController unit (mocked models) ValidationError detail assertions createShareableLink invalid targetId format" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getGlobalOverviewAnalytics returns counts (ApiResponse shape)" name="analysisController unit (mocked models) getGlobalOverviewAnalytics returns counts (ApiResponse shape)" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getSystemWideAnalytics requires session" name="analysisController unit (mocked models) getSystemWideAnalytics requires session" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getSystemWideAnalytics returns aggregated data (ApiResponse shape)" name="analysisController unit (mocked models) getSystemWideAnalytics returns aggregated data (ApiResponse shape)" time="0.003">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getSchoolAcademicTerms returns sorted sessions/terms" name="analysisController unit (mocked models) getSchoolAcademicTerms returns sorted sessions/terms" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getSchoolAcademicTerms falls back to defaults when empty" name="analysisController unit (mocked models) getSchoolAcademicTerms falls back to defaults when empty" time="0.004">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getAllAcademicSessions returns sessions sorted desc" name="analysisController unit (mocked models) getAllAcademicSessions returns sessions sorted desc" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) queryStudents returns results with count in message" name="analysisController unit (mocked models) queryStudents returns results with count in message" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getTeacherAnalytics returns analytics data" name="analysisController unit (mocked models) getTeacherAnalytics returns analytics data" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getDecliningStudents returns list" name="analysisController unit (mocked models) getDecliningStudents returns list" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getTimetableCompliance returns compliance structure" name="analysisController unit (mocked models) getTimetableCompliance returns compliance structure" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentExamHistory returns history" name="analysisController unit (mocked models) getStudentExamHistory returns history" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getClassroomLeaderboard returns data" name="analysisController unit (mocked models) getClassroomLeaderboard returns data" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) createShareableLink returns shareUrl" name="analysisController unit (mocked models) createShareableLink returns shareUrl" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getSchoolAcademicTerms invalid schoolId returns error" name="analysisController unit (mocked models) getSchoolAcademicTerms invalid schoolId returns error" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getTeacherAnalytics invalid teacherId" name="analysisController unit (mocked models) getTeacherAnalytics invalid teacherId" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getTeacherAnalytics missing session" name="analysisController unit (mocked models) getTeacherAnalytics missing session" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentAnalytics invalid id format" name="analysisController unit (mocked models) getStudentAnalytics invalid id format" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) queryStudents missing params" name="analysisController unit (mocked models) queryStudents missing params" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getClassroomLeaderboard missing params" name="analysisController unit (mocked models) getClassroomLeaderboard missing params" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getDecliningStudents missing params" name="analysisController unit (mocked models) getDecliningStudents missing params" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) createShareableLink missing type" name="analysisController unit (mocked models) createShareableLink missing type" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) createShareableLink invalid type" name="analysisController unit (mocked models) createShareableLink invalid type" time="0.002">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getTimetableCompliance missing params" name="analysisController unit (mocked models) getTimetableCompliance missing params" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentExamHistory invalid id" name="analysisController unit (mocked models) getStudentExamHistory invalid id" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentAnalytics unauthorized teacher different school" name="analysisController unit (mocked models) getStudentAnalytics unauthorized teacher different school" time="0.005">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentAnalytics parent not owner forbidden" name="analysisController unit (mocked models) getStudentAnalytics parent not owner forbidden" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) createShareableLink parent not owner forbidden" name="analysisController unit (mocked models) createShareableLink parent not owner forbidden" time="0.001">
+    </testcase>
+    <testcase classname="analysisController unit (mocked models) getStudentExamHistory parent not owner forbidden" name="analysisController unit (mocked models) getStudentExamHistory parent not owner forbidden" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="aiPedagogicalCoach Coverage Improvement" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:13" time="0.367" tests="22">
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI API key missing" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI API key missing" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI API initialization failure" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI API initialization failure" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle network timeout during AI provider setup" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle network timeout during AI provider setup" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle rate limiting from OpenAI API" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle rate limiting from OpenAI API" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI service unavailable" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle OpenAI service unavailable" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle malformed API response during initialization" name="aiPedagogicalCoach Coverage Improvement AI Provider Initialization (Lines 21, 34-93) should handle malformed API response during initialization" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI feedback generation with insufficient data" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI feedback generation with insufficient data" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI model context length exceeded" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI model context length exceeded" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI content filtering rejection" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI content filtering rejection" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI response parsing errors" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI response parsing errors" time="0.004">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI model overload/busy errors" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle AI model overload/busy errors" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle incomplete AI responses" name="aiPedagogicalCoach Coverage Improvement AI Feedback Generation Errors (Lines 108, 112, 171-226) should handle incomplete AI responses" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification service unavailable" name="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification service unavailable" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification scheduling conflicts" name="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification scheduling conflicts" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification delivery failures" name="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification delivery failures" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification rate limiting" name="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification rate limiting" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification template rendering errors" name="aiPedagogicalCoach Coverage Improvement Notification Handling (Lines 369, 376, 677-681, 748, 782) should handle notification template rendering errors" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle analytics generation with no data" name="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle analytics generation with no data" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle analytics computation errors" name="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle analytics computation errors" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle engagement score calculation edge cases" name="aiPedagogicalCoach Coverage Improvement Analytics and Reporting (Lines 748, 782) should handle engagement score calculation edge cases" time="0.002">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Error Recovery and Fallbacks should handle complete AI service outage" name="aiPedagogicalCoach Coverage Improvement Error Recovery and Fallbacks should handle complete AI service outage" time="0.001">
+    </testcase>
+    <testcase classname="aiPedagogicalCoach Coverage Improvement Error Recovery and Fallbacks should handle data validation failures" name="aiPedagogicalCoach Coverage Improvement Error Recovery and Fallbacks should handle data validation failures" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController Coverage Improvement" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:13" time="0.338" tests="15">
+    <testcase classname="examController Coverage Improvement Exam Creation Edge Cases (Lines 360, 363) should handle exam creation with invalid classroom reference" name="examController Coverage Improvement Exam Creation Edge Cases (Lines 360, 363) should handle exam creation with invalid classroom reference" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam Creation Edge Cases (Lines 360, 363) should handle exam creation with invalid subject reference" name="examController Coverage Improvement Exam Creation Edge Cases (Lines 360, 363) should handle exam creation with invalid subject reference" time="0.001">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Question Management Edge Cases (Lines 470, 484) should handle adding question to non-existent exam" name="examController Coverage Improvement Question Management Edge Cases (Lines 470, 484) should handle adding question to non-existent exam" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Question Management Edge Cases (Lines 470, 484) should handle question creation failure during transaction" name="examController Coverage Improvement Question Management Edge Cases (Lines 470, 484) should handle question creation failure during transaction" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam Submission Edge Cases (Lines 634, 641) should handle submission for already submitted exam" name="examController Coverage Improvement Exam Submission Edge Cases (Lines 634, 641) should handle submission for already submitted exam" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam Submission Edge Cases (Lines 634, 641) should handle submission timeout scenario" name="examController Coverage Improvement Exam Submission Edge Cases (Lines 634, 641) should handle submission timeout scenario" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Bulk Operations Edge Cases (Lines 666-671, 725-731) should handle bulk publish with no submissions" name="examController Coverage Improvement Bulk Operations Edge Cases (Lines 666-671, 725-731) should handle bulk publish with no submissions" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Bulk Operations Edge Cases (Lines 666-671, 725-731) should handle partial bulk publish failures" name="examController Coverage Improvement Bulk Operations Edge Cases (Lines 666-671, 725-731) should handle partial bulk publish failures" time="0.005">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Score Management Edge Cases (Lines 742, 794) should handle score posting with missing exam subject" name="examController Coverage Improvement Score Management Edge Cases (Lines 742, 794) should handle score posting with missing exam subject" time="0.001">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Score Management Edge Cases (Lines 742, 794) should handle score override with invalid score value" name="examController Coverage Improvement Score Management Edge Cases (Lines 742, 794) should handle score override with invalid score value" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam resume with invalid state transition" name="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam resume with invalid state transition" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam begin with time calculation errors" name="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam begin with time calculation errors" time="0.001">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam analytics with no data" name="examController Coverage Improvement Exam State Management Edge Cases (Lines 907, 977, 982) should handle exam analytics with no data" time="0.001">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Error Recovery and Cleanup should handle database transaction rollback" name="examController Coverage Improvement Error Recovery and Cleanup should handle database transaction rollback" time="0.002">
+    </testcase>
+    <testcase classname="examController Coverage Improvement Error Recovery and Cleanup should handle concurrent exam modifications" name="examController Coverage Improvement Error Recovery and Cleanup should handle concurrent exam modifications" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="gradeScaleService" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:13" time="0.52" tests="37">
+    <testcase classname="gradeScaleService getSchoolGradeScale should return WAEC default when no schoolId provided" name="gradeScaleService getSchoolGradeScale should return WAEC default when no schoolId provided" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should return cached grade scale when available" name="gradeScaleService getSchoolGradeScale should return cached grade scale when available" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should fetch from database and cache when not cached" name="gradeScaleService getSchoolGradeScale should fetch from database and cache when not cached" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should use custom scale when school has CUSTOM type" name="gradeScaleService getSchoolGradeScale should use custom scale when school has CUSTOM type" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should handle database errors gracefully" name="gradeScaleService getSchoolGradeScale should handle database errors gracefully" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should return WAEC default when school not found" name="gradeScaleService getSchoolGradeScale should return WAEC default when school not found" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale should use WAEC when gradingSystem exists but has no type" name="gradeScaleService getSchoolGradeScale should use WAEC when gradingSystem exists but has no type" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should update school grading system successfully" name="gradeScaleService updateSchoolGradingSystem should update school grading system successfully" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should validate grading system type" name="gradeScaleService updateSchoolGradingSystem should validate grading system type" time="0.052">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should validate custom scale when type is CUSTOM" name="gradeScaleService updateSchoolGradingSystem should validate custom scale when type is CUSTOM" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should validate custom scale structure" name="gradeScaleService updateSchoolGradingSystem should validate custom scale structure" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should detect overlapping ranges in custom scale" name="gradeScaleService updateSchoolGradingSystem should detect overlapping ranges in custom scale" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should handle school not found error" name="gradeScaleService updateSchoolGradingSystem should handle school not found error" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should set customScale and thresholds when type is CUSTOM" name="gradeScaleService updateSchoolGradingSystem should set customScale and thresholds when type is CUSTOM" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService updateSchoolGradingSystem should reject invalid score ranges in custom scale" name="gradeScaleService updateSchoolGradingSystem should reject invalid score ranges in custom scale" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should calculate grade using school-specific scale" name="gradeScaleService calculateGradeForSchool should calculate grade using school-specific scale" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should handle invalid scores" name="gradeScaleService calculateGradeForSchool should handle invalid scores" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should clamp scores to 0-100 range" name="gradeScaleService calculateGradeForSchool should clamp scores to 0-100 range" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should return lowest grade when no match found" name="gradeScaleService calculateGradeForSchool should return lowest grade when no match found" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should fallback to F/Fail when scale is empty" name="gradeScaleService calculateGradeForSchool should fallback to F/Fail when scale is empty" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService calculateGradeForSchool should fallback remarks to label when remarks missing" name="gradeScaleService calculateGradeForSchool should fallback remarks to label when remarks missing" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService getAvailableGradingSystems should return all available grading systems" name="gradeScaleService getAvailableGradingSystems should return all available grading systems" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should validate correct grade scale" name="gradeScaleService validateGradeScale should validate correct grade scale" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should detect missing required fields" name="gradeScaleService validateGradeScale should detect missing required fields" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should detect invalid score ranges" name="gradeScaleService validateGradeScale should detect invalid score ranges" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should detect overlapping ranges" name="gradeScaleService validateGradeScale should detect overlapping ranges" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should detect gaps in ranges (as warnings)" name="gradeScaleService validateGradeScale should detect gaps in ranges (as warnings)" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should handle non-array input" name="gradeScaleService validateGradeScale should handle non-array input" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should handle empty array" name="gradeScaleService validateGradeScale should handle empty array" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should flag non-number minScore and maxScore" name="gradeScaleService validateGradeScale should flag non-number minScore and maxScore" time="0.005">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should flag negative minScore and maxScore over 100" name="gradeScaleService validateGradeScale should flag negative minScore and maxScore over 100" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService validateGradeScale should require code field" name="gradeScaleService validateGradeScale should require code field" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeThresholds should return school-specific thresholds" name="gradeScaleService getSchoolGradeThresholds should return school-specific thresholds" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeThresholds should return defaults when school not found" name="gradeScaleService getSchoolGradeThresholds should return defaults when school not found" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeThresholds should handle database errors gracefully" name="gradeScaleService getSchoolGradeThresholds should handle database errors gracefully" time="0.002">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeThresholds should fallback minScore/label when threshold codes are not in scale" name="gradeScaleService getSchoolGradeThresholds should fallback minScore/label when threshold codes are not in scale" time="0.001">
+    </testcase>
+    <testcase classname="gradeScaleService getSchoolGradeScale - unknown type fallback should fallback to WAEC when gradingSystem type is unknown" name="gradeScaleService getSchoolGradeScale - unknown type fallback should fallback to WAEC when gradingSystem type is unknown" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="resultController core flows" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:14" time="1.305" tests="18">
+    <testcase classname="resultController core flows submitResult creates new pending result" name="resultController core flows submitResult creates new pending result" time="0.051">
+    </testcase>
+    <testcase classname="resultController core flows submitResult updates existing pending result on resubmission" name="resultController core flows submitResult updates existing pending result on resubmission" time="0.022">
+    </testcase>
+    <testcase classname="resultController core flows approveResult transitions pending-&gt;approved &amp; idempotent second call" name="resultController core flows approveResult transitions pending-&gt;approved &amp; idempotent second call" time="0.021">
+    </testcase>
+    <testcase classname="resultController core flows rejectResult requires reason and pending state" name="resultController core flows rejectResult requires reason and pending state" time="0.02">
+    </testcase>
+    <testcase classname="resultController core flows rejectResult success path sets rejected fields" name="resultController core flows rejectResult success path sets rejected fields" time="0.012">
+    </testcase>
+    <testcase classname="resultController core flows getAllResults returns meta pagination via ApiResponse" name="resultController core flows getAllResults returns meta pagination via ApiResponse" time="0.013">
+    </testcase>
+    <testcase classname="resultController core flows getStudentResults parent role filters to approved" name="resultController core flows getStudentResults parent role filters to approved" time="0.01">
+    </testcase>
+    <testcase classname="resultController multi-status &amp; scheduling submitResultsFromOCR 207 multi-status with summary meta" name="resultController multi-status &amp; scheduling submitResultsFromOCR 207 multi-status with summary meta" time="0.034">
+    </testcase>
+    <testcase classname="resultController multi-status &amp; scheduling submitResultsFromOCR parses nothing -&gt; 400 error" name="resultController multi-status &amp; scheduling submitResultsFromOCR parses nothing -&gt; 400 error" time="0.022">
+    </testcase>
+    <testcase classname="resultController multi-status &amp; scheduling submitResultsFromOCR validation error missing fields" name="resultController multi-status &amp; scheduling submitResultsFromOCR validation error missing fields" time="0.02">
+    </testcase>
+    <testcase classname="resultController multi-status &amp; scheduling generateAnnualResultsForClassroom schedules 202" name="resultController multi-status &amp; scheduling generateAnnualResultsForClassroom schedules 202" time="0.009">
+    </testcase>
+    <testcase classname="resultController multi-status &amp; scheduling bulkExportResults returns csv headers" name="resultController multi-status &amp; scheduling bulkExportResults returns csv headers" time="0.011">
+    </testcase>
+    <testcase classname="voice notes (principal scenarios) principal uploads voice note success" name="voice notes (principal scenarios) principal uploads voice note success" time="0.019">
+    </testcase>
+    <testcase classname="voice notes (principal scenarios) principal upload conflict (already exists)" name="voice notes (principal scenarios) principal upload conflict (already exists)" time="0.02">
+    </testcase>
+    <testcase classname="voice notes (principal scenarios) principal deletes voice note success" name="voice notes (principal scenarios) principal deletes voice note success" time="0.01">
+    </testcase>
+    <testcase classname="edge cases &amp; not found paths approveResult 404 when result not found" name="edge cases &amp; not found paths approveResult 404 when result not found" time="0.009">
+    </testcase>
+    <testcase classname="edge cases &amp; not found paths rejectResult 404 when result not found" name="edge cases &amp; not found paths rejectResult 404 when result not found" time="0.011">
+    </testcase>
+    <testcase classname="edge cases &amp; not found paths getAllResults empty page returns empty list with meta" name="edge cases &amp; not found paths getAllResults empty page returns empty list with meta" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController additional coverage" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:15" time="0.808" tests="17">
+    <testcase classname="examController additional coverage bulkPublishExamScores returns 200 when no submissions" name="examController additional coverage bulkPublishExamScores returns 200 when no submissions" time="0.003">
+    </testcase>
+    <testcase classname="examController additional coverage postExamScoreToResult negative branches returns 400 when submission not marked" name="examController additional coverage postExamScoreToResult negative branches returns 400 when submission not marked" time="0.006">
+    </testcase>
+    <testcase classname="examController additional coverage postExamScoreToResult negative branches returns 400 when already published" name="examController additional coverage postExamScoreToResult negative branches returns 400 when already published" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage postExamScoreToResult negative branches returns 400 when exam subject missing" name="examController additional coverage postExamScoreToResult negative branches returns 400 when exam subject missing" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage postExamScoreToResult negative branches returns 403 when school mismatch" name="examController additional coverage postExamScoreToResult negative branches returns 403 when school mismatch" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage addQuestionToExam fallback without transactions creates question and updates exam when transactions unsupported" name="examController additional coverage addQuestionToExam fallback without transactions creates question and updates exam when transactions unsupported" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage startExam paths returns 403 when student classroom mismatch" name="examController additional coverage startExam paths returns 403 when student classroom mismatch" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage startExam paths creates new submission and returns questions" name="examController additional coverage startExam paths creates new submission and returns questions" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage startExam paths returns 400 when already submitted" name="examController additional coverage startExam paths returns 400 when already submitted" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage submitAnswer update path updates existing answer atomically" name="examController additional coverage submitAnswer update path updates existing answer atomically" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage submitAnswer update path pushes new answer when not exists" name="examController additional coverage submitAnswer update path pushes new answer when not exists" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage begin/resume happy paths beginExam transitions ready -&gt; in-progress and sets times" name="examController additional coverage begin/resume happy paths beginExam transitions ready -&gt; in-progress and sets times" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage begin/resume happy paths resumeExam transitions paused -&gt; in-progress and recomputes endTime" name="examController additional coverage begin/resume happy paths resumeExam transitions paused -&gt; in-progress and recomputes endTime" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage overrideAnswerScore validation rejects non-number newScore with 400" name="examController additional coverage overrideAnswerScore validation rejects non-number newScore with 400" time="0.002">
+    </testcase>
+    <testcase classname="examController additional coverage overrideAnswerScore validation overrides answer score and recalculates total (200)" name="examController additional coverage overrideAnswerScore validation overrides answer score and recalculates total (200)" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage overrideAnswerScore validation rejects when submission is not marked (400)" name="examController additional coverage overrideAnswerScore validation rejects when submission is not marked (400)" time="0.001">
+    </testcase>
+    <testcase classname="examController additional coverage overrideAnswerScore validation returns 404 when answer not found within submission" name="examController additional coverage overrideAnswerScore validation returns 404 when answer not found within submission" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Assignment Controller (Improved)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:16" time="0.362" tests="12">
+    <testcase classname="Assignment Controller (Improved) createAssignment should create a new assignment successfully" name="Assignment Controller (Improved) createAssignment should create a new assignment successfully" time="0.05">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) createAssignment should handle database errors" name="Assignment Controller (Improved) createAssignment should handle database errors" time="0.001">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) getAssignmentsForClass should retrieve assignments for a classroom" name="Assignment Controller (Improved) getAssignmentsForClass should retrieve assignments for a classroom" time="0.003">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) getAssignmentsForClass should handle empty results" name="Assignment Controller (Improved) getAssignmentsForClass should handle empty results" time="0.001">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) submitAssignment should submit assignment successfully when on time" name="Assignment Controller (Improved) submitAssignment should submit assignment successfully when on time" time="0.004">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) submitAssignment should submit assignment as late when past due date" name="Assignment Controller (Improved) submitAssignment should submit assignment as late when past due date" time="0.002">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) submitAssignment should reject non-student users" name="Assignment Controller (Improved) submitAssignment should reject non-student users" time="0.002">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) submitAssignment should handle missing assignment" name="Assignment Controller (Improved) submitAssignment should handle missing assignment" time="0.002">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) submitAssignment should prevent duplicate submissions" name="Assignment Controller (Improved) submitAssignment should prevent duplicate submissions" time="0.005">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) gradeSubmission should grade submission successfully" name="Assignment Controller (Improved) gradeSubmission should grade submission successfully" time="0.002">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) gradeSubmission should handle missing submission" name="Assignment Controller (Improved) gradeSubmission should handle missing submission" time="0.001">
+    </testcase>
+    <testcase classname="Assignment Controller (Improved) gradeSubmission should handle database errors during grading" name="Assignment Controller (Improved) gradeSubmission should handle database errors during grading" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Error Handler Middleware" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:17" time="0.46" tests="22">
+    <testcase classname="Error Handler Middleware ValidationError handling should handle ValidationError with details" name="Error Handler Middleware ValidationError handling should handle ValidationError with details" time="0.003">
+    </testcase>
+    <testcase classname="Error Handler Middleware AuthenticationError handling should handle AuthenticationError" name="Error Handler Middleware AuthenticationError handling should handle AuthenticationError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware AuthorizationError handling should handle AuthorizationError" name="Error Handler Middleware AuthorizationError handling should handle AuthorizationError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware NotFoundError handling should handle NotFoundError" name="Error Handler Middleware NotFoundError handling should handle NotFoundError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware ConflictError handling should handle ConflictError" name="Error Handler Middleware ConflictError handling should handle ConflictError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware DatabaseError handling should handle DatabaseError in development" name="Error Handler Middleware DatabaseError handling should handle DatabaseError in development" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware DatabaseError handling should handle DatabaseError in production" name="Error Handler Middleware DatabaseError handling should handle DatabaseError in production" time="0.006">
+    </testcase>
+    <testcase classname="Error Handler Middleware ExternalServiceError handling should handle ExternalServiceError in development" name="Error Handler Middleware ExternalServiceError handling should handle ExternalServiceError in development" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware ExternalServiceError handling should handle ExternalServiceError in production" name="Error Handler Middleware ExternalServiceError handling should handle ExternalServiceError in production" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware MulterError handling should handle LIMIT_FILE_SIZE error" name="Error Handler Middleware MulterError handling should handle LIMIT_FILE_SIZE error" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware MulterError handling should handle LIMIT_FILE_COUNT error" name="Error Handler Middleware MulterError handling should handle LIMIT_FILE_COUNT error" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware MulterError handling should handle other MulterError codes" name="Error Handler Middleware MulterError handling should handle other MulterError codes" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware Mongoose ValidationError handling should handle Mongoose ValidationError" name="Error Handler Middleware Mongoose ValidationError handling should handle Mongoose ValidationError" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware Mongoose CastError handling should handle Mongoose CastError" name="Error Handler Middleware Mongoose CastError handling should handle Mongoose CastError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware Mongoose duplicate key error handling should handle duplicate key error" name="Error Handler Middleware Mongoose duplicate key error handling should handle duplicate key error" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware JWT error handling should handle JsonWebTokenError" name="Error Handler Middleware JWT error handling should handle JsonWebTokenError" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware JWT error handling should handle TokenExpiredError" name="Error Handler Middleware JWT error handling should handle TokenExpiredError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware Generic AppError handling should handle generic AppError" name="Error Handler Middleware Generic AppError handling should handle generic AppError" time="0.001">
+    </testcase>
+    <testcase classname="Error Handler Middleware Generic AppError handling should handle AppError without type" name="Error Handler Middleware Generic AppError handling should handle AppError without type" time="0.002">
+    </testcase>
+    <testcase classname="Error Handler Middleware Unknown error handling should handle unknown errors in development" name="Error Handler Middleware Unknown error handling should handle unknown errors in development" time="0.006">
+    </testcase>
+    <testcase classname="Error Handler Middleware Unknown error handling should handle unknown errors in production" name="Error Handler Middleware Unknown error handling should handle unknown errors in production" time="0.013">
+    </testcase>
+    <testcase classname="Error Handler Middleware Unknown error handling should handle errors with custom statusCode" name="Error Handler Middleware Unknown error handling should handle errors with custom statusCode" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="httpClient Coverage Improvement" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:17" time="1.355" tests="27">
+    <testcase classname="httpClient Coverage Improvement Error Handling Scenarios should handle network timeout errors" name="httpClient Coverage Improvement Error Handling Scenarios should handle network timeout errors" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Error Handling Scenarios should handle connection refused errors" name="httpClient Coverage Improvement Error Handling Scenarios should handle connection refused errors" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Error Handling Scenarios should handle DNS resolution errors" name="httpClient Coverage Improvement Error Handling Scenarios should handle DNS resolution errors" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Error Handling Scenarios should handle SSL certificate errors" name="httpClient Coverage Improvement Error Handling Scenarios should handle SSL certificate errors" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 400 Bad Request" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 400 Bad Request" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 401 Unauthorized" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 401 Unauthorized" time="0.004">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 403 Forbidden" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 403 Forbidden" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 404 Not Found" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 404 Not Found" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 500 Internal Server Error" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 500 Internal Server Error" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 502 Bad Gateway" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 502 Bad Gateway" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Status Code Handling should handle 503 Service Unavailable" name="httpClient Coverage Improvement HTTP Status Code Handling should handle 503 Service Unavailable" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Retry Mechanism Tests should retry failed requests up to max attempts" name="httpClient Coverage Improvement Retry Mechanism Tests should retry failed requests up to max attempts" time="0.207">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Retry Mechanism Tests should fail after max retry attempts" name="httpClient Coverage Improvement Retry Mechanism Tests should fail after max retry attempts" time="0.204">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Retry Mechanism Tests should use exponential backoff for retries" name="httpClient Coverage Improvement Retry Mechanism Tests should use exponential backoff for retries" time="0.605">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Request Configuration Tests should handle custom timeout configuration" name="httpClient Coverage Improvement Request Configuration Tests should handle custom timeout configuration" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Request Configuration Tests should handle retry configuration" name="httpClient Coverage Improvement Request Configuration Tests should handle retry configuration" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Request Configuration Tests should handle custom headers" name="httpClient Coverage Improvement Request Configuration Tests should handle custom headers" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Response Handling Tests should handle malformed JSON responses" name="httpClient Coverage Improvement Response Handling Tests should handle malformed JSON responses" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Response Handling Tests should handle empty responses" name="httpClient Coverage Improvement Response Handling Tests should handle empty responses" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Response Handling Tests should handle large responses" name="httpClient Coverage Improvement Response Handling Tests should handle large responses" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Method Tests should handle GET requests with query parameters" name="httpClient Coverage Improvement HTTP Method Tests should handle GET requests with query parameters" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Method Tests should handle POST requests with form data" name="httpClient Coverage Improvement HTTP Method Tests should handle POST requests with form data" time="0.02">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Method Tests should handle PUT requests for updates" name="httpClient Coverage Improvement HTTP Method Tests should handle PUT requests for updates" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement HTTP Method Tests should handle DELETE requests" name="httpClient Coverage Improvement HTTP Method Tests should handle DELETE requests" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Edge Cases should handle concurrent requests" name="httpClient Coverage Improvement Edge Cases should handle concurrent requests" time="0.001">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Edge Cases should handle request cancellation" name="httpClient Coverage Improvement Edge Cases should handle request cancellation" time="0.002">
+    </testcase>
+    <testcase classname="httpClient Coverage Improvement Edge Cases should handle request with invalid URL" name="httpClient Coverage Improvement Edge Cases should handle request with invalid URL" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="resultService.process &amp; validation helpers" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:18" time="0.749" tests="23">
+    <testcase classname="resultService.process &amp; validation helpers processResultData defaults missing fields to 0 and computes F9" name="resultService.process &amp; validation helpers processResultData defaults missing fields to 0 and computes F9" time="0.002">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers processResultData handles empty items array (average 0, needs improvement)" name="resultService.process &amp; validation helpers processResultData handles empty items array (average 0, needs improvement)" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData with non-array items takes non-array branch" name="resultService.process &amp; validation helpers validateResultData with non-array items takes non-array branch" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers processResultData computes totals, averages, remarks" name="resultService.process &amp; validation helpers processResultData computes totals, averages, remarks" time="0.005">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers processResultData handles missing items array" name="resultService.process &amp; validation helpers processResultData handles missing items array" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData returns error when data is null" name="resultService.process &amp; validation helpers validateResultData returns error when data is null" time="0">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData detects multiple structural errors" name="resultService.process &amp; validation helpers validateResultData detects multiple structural errors" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData enforces CA and exam score caps" name="resultService.process &amp; validation helpers validateResultData enforces CA and exam score caps" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData accepts boundary scores when structure valid" name="resultService.process &amp; validation helpers validateResultData accepts boundary scores when structure valid" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary empty path" name="resultService.process &amp; validation helpers generateResultSummary empty path" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary aggregates data" name="resultService.process &amp; validation helpers generateResultSummary aggregates data" time="0.002">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary uses subject name/toString fallback and grade calc when grade missing" name="resultService.process &amp; validation helpers generateResultSummary uses subject name/toString fallback and grade calc when grade missing" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary sorts by average when positions missing" name="resultService.process &amp; validation helpers generateResultSummary sorts by average when positions missing" time="0.002">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary uses position ordering when present and unknown student fallback" name="resultService.process &amp; validation helpers generateResultSummary uses position ordering when present and unknown student fallback" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData missing term with valid session triggers only term error" name="resultService.process &amp; validation helpers validateResultData missing term with valid session triggers only term error" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary handles null results from db" name="resultService.process &amp; validation helpers generateResultSummary handles null results from db" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary subject keys: string, object name, null; totals default to 0" name="resultService.process &amp; validation helpers generateResultSummary subject keys: string, object name, null; totals default to 0" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary mixed positions: position respected among positioned, average dominates others" name="resultService.process &amp; validation helpers generateResultSummary mixed positions: position respected among positioned, average dominates others" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary sorts using 0 when average undefined" name="resultService.process &amp; validation helpers generateResultSummary sorts using 0 when average undefined" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary comparator handles equal averages (stable-ish)" name="resultService.process &amp; validation helpers generateResultSummary comparator handles equal averages (stable-ish)" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary handles result with items undefined (loops skip safely)" name="resultService.process &amp; validation helpers generateResultSummary handles result with items undefined (loops skip safely)" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers validateResultData accepts term 0 (treated as provided) and no term-range error" name="resultService.process &amp; validation helpers validateResultData accepts term 0 (treated as provided) and no term-range error" time="0.001">
+    </testcase>
+    <testcase classname="resultService.process &amp; validation helpers generateResultSummary: subject.toString whitespace -&gt; Unknown and empty grade -&gt; calculated" name="resultService.process &amp; validation helpers generateResultSummary: subject.toString whitespace -&gt; Unknown and empty grade -&gt; calculated" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/authMiddleware (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:19" time="0.343" tests="17">
+    <testcase classname="middleware/authMiddleware (unit) protect calls next with 401 when token missing" name="middleware/authMiddleware (unit) protect calls next with 401 when token missing" time="0.017">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect handles expired token with 401 and session expired message" name="middleware/authMiddleware (unit) protect handles expired token with 401 and session expired message" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect handles malformed/invalid token with 401 verification failed" name="middleware/authMiddleware (unit) protect handles malformed/invalid token with 401 verification failed" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect authenticates valid token and active user (success path)" name="middleware/authMiddleware (unit) protect authenticates valid token and active user (success path)" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect rejects when tokenVersion mismatches (force logout scenario)" name="middleware/authMiddleware (unit) protect rejects when tokenVersion mismatches (force logout scenario)" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect rejects inactive user with 403" name="middleware/authMiddleware (unit) protect rejects inactive user with 403" time="0.005">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protect rejects with 401 when user not found" name="middleware/authMiddleware (unit) protect rejects with 401 when user not found" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeRoles rejects when req.user is missing" name="middleware/authMiddleware (unit) authorizeRoles rejects when req.user is missing" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeRoles rejects forbidden role with 403 and required roles in message" name="middleware/authMiddleware (unit) authorizeRoles rejects forbidden role with 403 and required roles in message" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeRoles allows when role is permitted" name="middleware/authMiddleware (unit) authorizeRoles allows when role is permitted" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protectMfa returns 401 when MFA token missing" name="middleware/authMiddleware (unit) protectMfa returns 401 when MFA token missing" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protectMfa rejects when token type is invalid (mfa flag missing/false)" name="middleware/authMiddleware (unit) protectMfa rejects when token type is invalid (mfa flag missing/false)" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protectMfa attaches minimal user and passes when mfa=true" name="middleware/authMiddleware (unit) protectMfa attaches minimal user and passes when mfa=true" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) protectMfa handles jwt verify errors as expired/failed" name="middleware/authMiddleware (unit) protectMfa handles jwt verify errors as expired/failed" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeGlobalAdmin rejects with 500 when ZINNOL_CEO_EMAIL is not set" name="middleware/authMiddleware (unit) authorizeGlobalAdmin rejects with 500 when ZINNOL_CEO_EMAIL is not set" time="0.003">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeGlobalAdmin rejects with 403 when role or email does not match" name="middleware/authMiddleware (unit) authorizeGlobalAdmin rejects with 403 when role or email does not match" time="0.002">
+    </testcase>
+    <testcase classname="middleware/authMiddleware (unit) authorizeGlobalAdmin allows Global Super Admin with matching email" name="middleware/authMiddleware (unit) authorizeGlobalAdmin allows Global Super Admin with matching email" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController remaining endpoints (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:19" time="0.324" tests="15">
+    <testcase classname="examController remaining endpoints (unit) createExam 403 when user has no school" name="examController remaining endpoints (unit) createExam 403 when user has no school" time="0.002">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) createExam 404 classroom not found" name="examController remaining endpoints (unit) createExam 404 classroom not found" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) createExam 403 classroom different school" name="examController remaining endpoints (unit) createExam 403 classroom different school" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) createExam 403 subject different school" name="examController remaining endpoints (unit) createExam 403 subject different school" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) createExam 201 success creates exam" name="examController remaining endpoints (unit) createExam 201 success creates exam" time="0.002">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) getExams returns filtered exams with populate + sort" name="examController remaining endpoints (unit) getExams returns filtered exams with populate + sort" time="0.002">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) getExamSubmissions returns submissions list with populate + sort" name="examController remaining endpoints (unit) getExamSubmissions returns submissions list with populate + sort" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) assign/remove/get invigilators assignInvigilator validates teacher and prevents duplicates" name="examController remaining endpoints (unit) assign/remove/get invigilators assignInvigilator validates teacher and prevents duplicates" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) assign/remove/get invigilators removeInvigilator 404 then 200" name="examController remaining endpoints (unit) assign/remove/get invigilators removeInvigilator 404 then 200" time="0.002">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) assign/remove/get invigilators getInvigilators returns list" name="examController remaining endpoints (unit) assign/remove/get invigilators getInvigilators returns list" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) markStudentExam 404 when submission not found" name="examController remaining endpoints (unit) markStudentExam 404 when submission not found" time="0.004">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) markStudentExam 400 when already marked" name="examController remaining endpoints (unit) markStudentExam 400 when already marked" time="0.002">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) markStudentExam 400 when not submitted" name="examController remaining endpoints (unit) markStudentExam 400 when not submitted" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) markStudentExam 200 marks using autoMarkSubmission" name="examController remaining endpoints (unit) markStudentExam 200 marks using autoMarkSubmission" time="0.001">
+    </testcase>
+    <testcase classname="examController remaining endpoints (unit) finalizeSubmission happy path 200 when transitioned to submitted" name="examController remaining endpoints (unit) finalizeSubmission happy path 200 when transitioned to submitted" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="resultService extra coverage" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:20" time="0.622" tests="20">
+    <testcase classname="resultService extra coverage grade scale setters/getters setGradeScale sorts and applies new scale" name="resultService extra coverage grade scale setters/getters setGradeScale sorts and applies new scale" time="0.002">
+    </testcase>
+    <testcase classname="resultService extra coverage grade scale setters/getters setGradeScale ignores invalid scale" name="resultService extra coverage grade scale setters/getters setGradeScale ignores invalid scale" time="0">
+    </testcase>
+    <testcase classname="resultService extra coverage calculatePosition edge cases non-array input returns empty array" name="resultService extra coverage calculatePosition edge cases non-array input returns empty array" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage calculatePosition edge cases handles NaN or non-number scores gracefully" name="resultService extra coverage calculatePosition edge cases handles NaN or non-number scores gracefully" time="0">
+    </testcase>
+    <testcase classname="resultService extra coverage bulkUpdateOrCreateResults returns early on empty input" name="resultService extra coverage bulkUpdateOrCreateResults returns early on empty input" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage bulkUpdateOrCreateResults accumulates validation errors" name="resultService extra coverage bulkUpdateOrCreateResults accumulates validation errors" time="0.005">
+    </testcase>
+    <testcase classname="resultService extra coverage bulkUpdateOrCreateResults builds bulk operations and returns counts" name="resultService extra coverage bulkUpdateOrCreateResults builds bulk operations and returns counts" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage bulkUpdateOrCreateResults handles bulkWrite exception" name="resultService extra coverage bulkUpdateOrCreateResults handles bulkWrite exception" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage processResultData remarks branches Excellent performance (A1)" name="resultService extra coverage processResultData remarks branches Excellent performance (A1)" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage processResultData remarks branches Good performance (B3/C4/C5)" name="resultService extra coverage processResultData remarks branches Good performance (B3/C4/C5)" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage processResultData remarks branches Fair performance (C6/D7/E8)" name="resultService extra coverage processResultData remarks branches Fair performance (C6/D7/E8)" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage processResultData remarks branches Needs improvement (F9)" name="resultService extra coverage processResultData remarks branches Needs improvement (F9)" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows creates new result when none exists" name="resultService extra coverage updateOrCreateResult flows creates new result when none exists" time="0.002">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows updates existing subject item" name="resultService extra coverage updateOrCreateResult flows updates existing subject item" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows adds new subject item if not present" name="resultService extra coverage updateOrCreateResult flows adds new subject item if not present" time="0.002">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows omits CA fields uses defaults without error" name="resultService extra coverage updateOrCreateResult flows omits CA fields uses defaults without error" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows throws on invalid exam score" name="resultService extra coverage updateOrCreateResult flows throws on invalid exam score" time="0.052">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows throws on negative exam score" name="resultService extra coverage updateOrCreateResult flows throws on negative exam score" time="0.001">
+    </testcase>
+    <testcase classname="resultService extra coverage updateOrCreateResult flows throws on invalid CA score" name="resultService extra coverage updateOrCreateResult flows throws on invalid CA score" time="0.002">
+    </testcase>
+    <testcase classname="resultService extra coverage bulkUpdateOrCreateResults deeper paths builds arrayFilters &amp; addToSet entries" name="resultService extra coverage bulkUpdateOrCreateResults deeper paths builds arrayFilters &amp; addToSet entries" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Assignment Controller API (/api/assignments)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:20" time="25.657" tests="11">
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should allow a teacher to create a new assignment" name="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should allow a teacher to create a new assignment" time="1.72">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should NOT allow a student to create an assignment" name="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should NOT allow a student to create an assignment" time="1.38">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should return 400 if required fields are missing" name="Assignment Controller API (/api/assignments) POST /api/assignments (createAssignment) should return 400 if required fields are missing" time="1.383">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should allow a student to get assignments for their class" name="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should allow a student to get assignments for their class" time="1.396">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should allow a teacher to get assignments for a class" name="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should allow a teacher to get assignments for a class" time="1.385">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should deny access to a principal (or other non-student/teacher roles)" name="Assignment Controller API (/api/assignments) GET /api/assignments/class/:classroomId (getAssignmentsForClass) should deny access to a principal (or other non-student/teacher roles)" time="1.377">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should allow a student to submit their work" name="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should allow a student to submit their work" time="1.394">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should mark a submission as &apos;late&apos; if submitted after the due date" name="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should mark a submission as &apos;late&apos; if submitted after the due date" time="1.409">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should return 409 if a student tries to submit the same assignment twice" name="Assignment Controller API (/api/assignments) POST /api/assignments/:id/submit (submitAssignment) should return 409 if a student tries to submit the same assignment twice" time="1.417">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) PATCH /api/assignments/submissions/:submissionId/grade (gradeSubmission) should allow a teacher to grade a submission" name="Assignment Controller API (/api/assignments) PATCH /api/assignments/submissions/:submissionId/grade (gradeSubmission) should allow a teacher to grade a submission" time="1.387">
+    </testcase>
+    <testcase classname="Assignment Controller API (/api/assignments) PATCH /api/assignments/submissions/:submissionId/grade (gradeSubmission) should return 403 if a student tries to grade a submission" name="Assignment Controller API (/api/assignments) PATCH /api/assignments/submissions/:submissionId/grade (gradeSubmission) should return 403 if a student tries to grade a submission" time="1.378">
+    </testcase>
+  </testsuite>
+  <testsuite name="schemeController remaining endpoints" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:46" time="0.409" tests="18">
+    <testcase classname="schemeController remaining endpoints getScheme success returns scheme, lessons, progress" name="schemeController remaining endpoints getScheme success returns scheme, lessons, progress" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints getScheme not found scheme triggers error" name="schemeController remaining endpoints getScheme not found scheme triggers error" time="0.001">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints getScheme cross school forbidden" name="schemeController remaining endpoints getScheme cross school forbidden" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints updateLessonStatus success updates status" name="schemeController remaining endpoints updateLessonStatus success updates status" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints updateLessonStatus invalid status validation error" name="schemeController remaining endpoints updateLessonStatus invalid status validation error" time="0.003">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints updateLessonStatus not found lesson" name="schemeController remaining endpoints updateLessonStatus not found lesson" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints updateLessonStatus forbidden role" name="schemeController remaining endpoints updateLessonStatus forbidden role" time="0.001">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonNote success adds note" name="schemeController remaining endpoints addLessonNote success adds note" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonNote missing content validation error" name="schemeController remaining endpoints addLessonNote missing content validation error" time="0.003">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonNote not found lesson" name="schemeController remaining endpoints addLessonNote not found lesson" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonNote cross-school access denied" name="schemeController remaining endpoints addLessonNote cross-school access denied" time="0.001">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints reviewLesson success adds review" name="schemeController remaining endpoints reviewLesson success adds review" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints reviewLesson invalid status" name="schemeController remaining endpoints reviewLesson invalid status" time="0.006">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints reviewLesson not allowed role" name="schemeController remaining endpoints reviewLesson not allowed role" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonFeedback success records feedback" name="schemeController remaining endpoints addLessonFeedback success records feedback" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonFeedback invalid confirmation" name="schemeController remaining endpoints addLessonFeedback invalid confirmation" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonFeedback not allowed role" name="schemeController remaining endpoints addLessonFeedback not allowed role" time="0.002">
+    </testcase>
+    <testcase classname="schemeController remaining endpoints addLessonFeedback lesson not found" name="schemeController remaining endpoints addLessonFeedback lesson not found" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="User Integration Tests" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:58:47" time="17.346" tests="20">
+    <testcase classname="User Integration Tests User Model should create a new user" name="User Integration Tests User Model should create a new user" time="0.469">
+    </testcase>
+    <testcase classname="User Integration Tests User Model should hash password before saving" name="User Integration Tests User Model should hash password before saving" time="0.839">
+    </testcase>
+    <testcase classname="User Integration Tests User Model should not save user without required fields" name="User Integration Tests User Model should not save user without required fields" time="0.01">
+    </testcase>
+    <testcase classname="User Integration Tests User Model should enforce unique email constraint" name="User Integration Tests User Model should enforce unique email constraint" time="0.861">
+    </testcase>
+    <testcase classname="User Integration Tests User Model should have default values" name="User Integration Tests User Model should have default values" time="0.429">
+    </testcase>
+    <testcase classname="User Integration Tests User Methods should match password correctly" name="User Integration Tests User Methods should match password correctly" time="1.259">
+    </testcase>
+    <testcase classname="User Integration Tests RefreshToken Model should create a refresh token" name="User Integration Tests RefreshToken Model should create a refresh token" time="0.431">
+    </testcase>
+    <testcase classname="User Integration Tests RefreshToken Model should hash token correctly" name="User Integration Tests RefreshToken Model should hash token correctly" time="0.005">
+    </testcase>
+    <testcase classname="User Integration Tests RefreshToken Model should handle token expiration" name="User Integration Tests RefreshToken Model should handle token expiration" time="0.43">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should find users by role" name="User Integration Tests User Queries should find users by role" time="1.682">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should paginate users" name="User Integration Tests User Queries should paginate users" time="1.683">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should search users by name" name="User Integration Tests User Queries should search users by name" time="1.678">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should count documents" name="User Integration Tests User Queries should count documents" time="1.682">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should update user" name="User Integration Tests User Queries should update user" time="1.693">
+    </testcase>
+    <testcase classname="User Integration Tests User Queries should delete user" name="User Integration Tests User Queries should delete user" time="1.687">
+    </testcase>
+    <testcase classname="User Integration Tests User Validation should validate email format" name="User Integration Tests User Validation should validate email format" time="0.009">
+    </testcase>
+    <testcase classname="User Integration Tests User Validation should trim whitespace from fields" name="User Integration Tests User Validation should trim whitespace from fields" time="0.423">
+    </testcase>
+    <testcase classname="User Integration Tests User Validation should convert email to lowercase" name="User Integration Tests User Validation should convert email to lowercase" time="0.426">
+    </testcase>
+    <testcase classname="User Integration Tests User Relationships should handle school relationship" name="User Integration Tests User Relationships should handle school relationship" time="0.424">
+    </testcase>
+    <testcase classname="User Integration Tests User Relationships should handle users without school" name="User Integration Tests User Relationships should handle users without school" time="0.426">
+    </testcase>
+  </testsuite>
+  <testsuite name="User Model" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:04" time="10.288" tests="25">
+    <testcase classname="User Model Schema Validations should create a valid user" name="User Model Schema Validations should create a valid user" time="0.458">
+    </testcase>
+    <testcase classname="User Model Schema Validations should require name" name="User Model Schema Validations should require name" time="0.008">
+    </testcase>
+    <testcase classname="User Model Schema Validations should require email" name="User Model Schema Validations should require email" time="0.006">
+    </testcase>
+    <testcase classname="User Model Schema Validations should validate email format" name="User Model Schema Validations should validate email format" time="0.007">
+    </testcase>
+    <testcase classname="User Model Schema Validations should enforce unique email" name="User Model Schema Validations should enforce unique email" time="0.86">
+    </testcase>
+    <testcase classname="User Model Schema Validations should validate role enum" name="User Model Schema Validations should validate role enum" time="0.007">
+    </testcase>
+    <testcase classname="User Model Password Hashing should hash password before saving" name="User Model Password Hashing should hash password before saving" time="0.425">
+    </testcase>
+    <testcase classname="User Model Password Hashing should not rehash password if not modified" name="User Model Password Hashing should not rehash password if not modified" time="0.428">
+    </testcase>
+    <testcase classname="User Model Instance Methods matchPassword should return true for correct password" name="User Model Instance Methods matchPassword should return true for correct password" time="0.835">
+    </testcase>
+    <testcase classname="User Model Instance Methods matchPassword should return false for incorrect password" name="User Model Instance Methods matchPassword should return false for incorrect password" time="0.836">
+    </testcase>
+    <testcase classname="User Model Instance Methods createPasswordResetToken should generate reset token" name="User Model Instance Methods createPasswordResetToken should generate reset token" time="0.425">
+    </testcase>
+    <testcase classname="User Model Instance Methods createPasswordResetToken should set expiry time" name="User Model Instance Methods createPasswordResetToken should set expiry time" time="0.423">
+    </testcase>
+    <testcase classname="User Model Instance Methods incrementFailedLoginAttempts should increment failed attempts" name="User Model Instance Methods incrementFailedLoginAttempts should increment failed attempts" time="0.439">
+    </testcase>
+    <testcase classname="User Model Instance Methods incrementFailedLoginAttempts should lock account after max attempts" name="User Model Instance Methods incrementFailedLoginAttempts should lock account after max attempts" time="0.45">
+    </testcase>
+    <testcase classname="User Model Instance Methods resetFailedLoginAttempts should reset failed attempts" name="User Model Instance Methods resetFailedLoginAttempts should reset failed attempts" time="0.434">
+    </testcase>
+    <testcase classname="User Model Instance Methods isAccountLocked should return false for unlocked account" name="User Model Instance Methods isAccountLocked should return false for unlocked account" time="0.422">
+    </testcase>
+    <testcase classname="User Model Instance Methods isAccountLocked should return true for locked account" name="User Model Instance Methods isAccountLocked should return true for locked account" time="0.424">
+    </testcase>
+    <testcase classname="User Model Instance Methods isAccountLocked should return false for expired lock" name="User Model Instance Methods isAccountLocked should return false for expired lock" time="0.428">
+    </testcase>
+    <testcase classname="User Model Virtual Properties should have fullName virtual" name="User Model Virtual Properties should have fullName virtual" time="0.423">
+    </testcase>
+    <testcase classname="User Model Indexes should have index on email" name="User Model Indexes should have index on email" time="0.01">
+    </testcase>
+    <testcase classname="User Model Indexes should have index on role" name="User Model Indexes should have index on role" time="0.007">
+    </testcase>
+    <testcase classname="User Model Timestamps should add createdAt and updatedAt" name="User Model Timestamps should add createdAt and updatedAt" time="0.425">
+    </testcase>
+    <testcase classname="User Model Timestamps should update updatedAt on save" name="User Model Timestamps should update updatedAt on save" time="0.439">
+    </testcase>
+    <testcase classname="User Model Soft Delete should soft delete user" name="User Model Soft Delete should soft delete user" time="0.428">
+    </testcase>
+    <testcase classname="User Model MFA Properties should handle MFA setup" name="User Model MFA Properties should handle MFA setup" time="0.438">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/schoolMiddleware" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:14" time="0.342" tests="10">
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess 404 when school not found" name="middleware/schoolMiddleware checkSchoolAccess 404 when school not found" time="0.003">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess allows GLOBAL_SUPER_ADMIN for any school" name="middleware/schoolMiddleware checkSchoolAccess allows GLOBAL_SUPER_ADMIN for any school" time="0.002">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess allows MAIN_SUPER_ADMIN when owner" name="middleware/schoolMiddleware checkSchoolAccess allows MAIN_SUPER_ADMIN when owner" time="0.004">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess forbids MAIN_SUPER_ADMIN when not owner" name="middleware/schoolMiddleware checkSchoolAccess forbids MAIN_SUPER_ADMIN when not owner" time="0.001">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess forbids other roles when accessing different school" name="middleware/schoolMiddleware checkSchoolAccess forbids other roles when accessing different school" time="0.002">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkSchoolAccess allows other roles when accessing their own school" name="middleware/schoolMiddleware checkSchoolAccess allows other roles when accessing their own school" time="0.002">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkStudentAccess 500 if checkSchoolAccess not executed first" name="middleware/schoolMiddleware checkStudentAccess 500 if checkSchoolAccess not executed first" time="0.002">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkStudentAccess 404 when student not found" name="middleware/schoolMiddleware checkStudentAccess 404 when student not found" time="0.001">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkStudentAccess 404 when student belongs to different school" name="middleware/schoolMiddleware checkStudentAccess 404 when student belongs to different school" time="0.001">
+    </testcase>
+    <testcase classname="middleware/schoolMiddleware checkStudentAccess passes when student belongs to the school" name="middleware/schoolMiddleware checkStudentAccess passes when student belongs to the school" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach helper coverage (extra)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:15" time="0.396" tests="19">
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels positive when positive &gt; negative" name="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels positive when positive &gt; negative" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels negative when negative &gt; positive" name="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels negative when negative &gt; positive" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels neutral when no keywords" name="AIPedagogicalCoach helper coverage (extra) analyzeSentiment labels neutral when no keywords" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) extractors extractTopics finds multiple topics" name="AIPedagogicalCoach helper coverage (extra) extractors extractTopics finds multiple topics" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) extractors identifyChallenges matches different patterns" name="AIPedagogicalCoach helper coverage (extra) extractors identifyChallenges matches different patterns" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) extractors identifySuccesses matches patterns" name="AIPedagogicalCoach helper coverage (extra) extractors identifySuccesses matches patterns" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) extractors countStudentMentions sums different phrases" name="AIPedagogicalCoach helper coverage (extra) extractors countStudentMentions sums different phrases" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) extractors extractActionItems finds will/next/follow up patterns" name="AIPedagogicalCoach helper coverage (extra) extractors extractActionItems finds will/next/follow up patterns" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultStrengths covers multiple branches" name="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultStrengths covers multiple branches" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultStrengths fallback when none found" name="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultStrengths fallback when none found" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultGrowthAreas multiple reasons" name="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultGrowthAreas multiple reasons" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultGrowthAreas fallback" name="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultGrowthAreas fallback" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultSuggestions specific challenge routing" name="AIPedagogicalCoach helper coverage (extra) defaults generators generateDefaultSuggestions specific challenge routing" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc selectRelevantResources by topics and challenges" name="AIPedagogicalCoach helper coverage (extra) resources + misc selectRelevantResources by topics and challenges" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc calculateCheckInDate ~ 7 days ahead" name="AIPedagogicalCoach helper coverage (extra) resources + misc calculateCheckInDate ~ 7 days ahead" time="0">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc determinePriority low/medium branches" name="AIPedagogicalCoach helper coverage (extra) resources + misc determinePriority low/medium branches" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc estimateEngagement none -&gt; moderate; with engagement + positive -&gt; high; negative -&gt; low" name="AIPedagogicalCoach helper coverage (extra) resources + misc estimateEngagement none -&gt; moderate; with engagement + positive -&gt; high; negative -&gt; low" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc assessReflectionQuality accumulates points and caps at 100" name="AIPedagogicalCoach helper coverage (extra) resources + misc assessReflectionQuality accumulates points and caps at 100" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helper coverage (extra) resources + misc formatNotificationMessage branches by score" name="AIPedagogicalCoach helper coverage (extra) resources + misc formatNotificationMessage branches by score" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Result Service" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:15" time="0.745" tests="18">
+    <testcase classname="Result Service calculateGrade should map scores to WAEC style bands" name="Result Service calculateGrade should map scores to WAEC style bands" time="0.002">
+    </testcase>
+    <testcase classname="Result Service calculateGrade should clamp out of range scores" name="Result Service calculateGrade should clamp out of range scores" time="0.001">
+    </testcase>
+    <testcase classname="Result Service calculatePosition should calculate positions correctly" name="Result Service calculatePosition should calculate positions correctly" time="0.001">
+    </testcase>
+    <testcase classname="Result Service calculatePosition should handle tied scores" name="Result Service calculatePosition should handle tied scores" time="0.001">
+    </testcase>
+    <testcase classname="Result Service calculatePosition should handle empty array" name="Result Service calculatePosition should handle empty array" time="0.001">
+    </testcase>
+    <testcase classname="Result Service calculatePosition should handle single score" name="Result Service calculatePosition should handle single score" time="0.001">
+    </testcase>
+    <testcase classname="Result Service processResultData should process result data correctly" name="Result Service processResultData should process result data correctly" time="0.001">
+    </testcase>
+    <testcase classname="Result Service processResultData should handle missing CA scores" name="Result Service processResultData should handle missing CA scores" time="0.001">
+    </testcase>
+    <testcase classname="Result Service processResultData should calculate remarks based on average" name="Result Service processResultData should calculate remarks based on average" time="0.001">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate correct result data" name="Result Service validateResultData should validate correct result data" time="0.001">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate CA scores not exceeding 20" name="Result Service validateResultData should validate CA scores not exceeding 20" time="0.001">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate exam score not exceeding 60" name="Result Service validateResultData should validate exam score not exceeding 60" time="0.001">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate required fields" name="Result Service validateResultData should validate required fields" time="0.005">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate session format" name="Result Service validateResultData should validate session format" time="0.001">
+    </testcase>
+    <testcase classname="Result Service validateResultData should validate term range" name="Result Service validateResultData should validate term range" time="0.001">
+    </testcase>
+    <testcase classname="Result Service generateResultSummary should generate comprehensive result summary" name="Result Service generateResultSummary should generate comprehensive result summary" time="0.002">
+    </testcase>
+    <testcase classname="Result Service generateResultSummary should calculate grade distribution" name="Result Service generateResultSummary should calculate grade distribution" time="0.002">
+    </testcase>
+    <testcase classname="Result Service generateResultSummary should identify top performers" name="Result Service generateResultSummary should identify top performers" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="School Model" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:16" time="0.917" tests="17">
+    <testcase classname="School Model School Creation should create a valid school" name="School Model School Creation should create a valid school" time="0.269">
+    </testcase>
+    <testcase classname="School Model School Creation should require name field" name="School Model School Creation should require name field" time="0.008">
+    </testcase>
+    <testcase classname="School Model School Creation should allow optional fields to be undefined" name="School Model School Creation should allow optional fields to be undefined" time="0.009">
+    </testcase>
+    <testcase classname="School Model Default Values should set isActive to true by default" name="School Model Default Values should set isActive to true by default" time="0.011">
+    </testcase>
+    <testcase classname="School Model Default Values should initialize features as empty Map" name="School Model Default Values should initialize features as empty Map" time="0.009">
+    </testcase>
+    <testcase classname="School Model Default Values should initialize notifiedMilestones as empty array" name="School Model Default Values should initialize notifiedMilestones as empty array" time="0.009">
+    </testcase>
+    <testcase classname="School Model Features Map should allow setting feature flags" name="School Model Features Map should allow setting feature flags" time="0.009">
+    </testcase>
+    <testcase classname="School Model Features Map should handle feature map operations" name="School Model Features Map should handle feature map operations" time="0.019">
+    </testcase>
+    <testcase classname="School Model Reference Fields should allow setting mainSuperAdmins references" name="School Model Reference Fields should allow setting mainSuperAdmins references" time="0.009">
+    </testcase>
+    <testcase classname="School Model Reference Fields should allow setting students references" name="School Model Reference Fields should allow setting students references" time="0.008">
+    </testcase>
+    <testcase classname="School Model Timestamps should set createdAt and updatedAt timestamps" name="School Model Timestamps should set createdAt and updatedAt timestamps" time="0.01">
+    </testcase>
+    <testcase classname="School Model Timestamps should update updatedAt on save" name="School Model Timestamps should update updatedAt on save" time="0.025">
+    </testcase>
+    <testcase classname="School Model Data Validation should accept valid coordinate values" name="School Model Data Validation should accept valid coordinate values" time="0.009">
+    </testcase>
+    <testcase classname="School Model Data Validation should accept negative coordinate values" name="School Model Data Validation should accept negative coordinate values" time="0.009">
+    </testcase>
+    <testcase classname="School Model Data Validation should accept decimal coordinate values" name="School Model Data Validation should accept decimal coordinate values" time="0.01">
+    </testcase>
+    <testcase classname="School Model Notified Milestones should allow adding notified milestones" name="School Model Notified Milestones should allow adding notified milestones" time="0.009">
+    </testcase>
+    <testcase classname="School Model Notified Milestones should prevent duplicate milestones" name="School Model Notified Milestones should prevent duplicate milestones" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="googleDriveController extra endpoints (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:17" time="0.361" tests="9">
+    <testcase classname="googleDriveController extra endpoints (unit) backupSchoolData success backup by main super admin" name="googleDriveController extra endpoints (unit) backupSchoolData success backup by main super admin" time="0.008">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) backupSchoolData school not found" name="googleDriveController extra endpoints (unit) backupSchoolData school not found" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) backupSchoolData forbidden when not main super admin or school admin" name="googleDriveController extra endpoints (unit) backupSchoolData forbidden when not main super admin or school admin" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) getAvailableSchools super admin sees only their main schools" name="googleDriveController extra endpoints (unit) getAvailableSchools super admin sees only their main schools" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) getAvailableSchools school admin sees only their school" name="googleDriveController extra endpoints (unit) getAvailableSchools school admin sees only their school" time="0.001">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) getAvailableSchools unauthorized role gets empty array" name="googleDriveController extra endpoints (unit) getAvailableSchools unauthorized role gets empty array" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) handleAuthCallback error query returns 400 style ok with message" name="googleDriveController extra endpoints (unit) handleAuthCallback error query returns 400 style ok with message" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) handleAuthCallback missing code returns 400" name="googleDriveController extra endpoints (unit) handleAuthCallback missing code returns 400" time="0.001">
+    </testcase>
+    <testcase classname="googleDriveController extra endpoints (unit) handleAuthCallback success redirects" name="googleDriveController extra endpoints (unit) handleAuthCallback success redirects" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="utils/generateToken" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:17" time="0.386" tests="16">
+    <testcase classname="utils/generateToken generateAccessToken signs with claims and expiry" name="utils/generateToken generateAccessToken signs with claims and expiry" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken generateRefreshToken signs with jwtid and refresh secret" name="utils/generateToken generateRefreshToken signs with jwtid and refresh secret" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken generateRefreshToken falls back to JWT_SECRET when refresh secret missing" name="utils/generateToken generateRefreshToken falls back to JWT_SECRET when refresh secret missing" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken generateAccessToken uses default expiry from env when not provided" name="utils/generateToken generateAccessToken uses default expiry from env when not provided" time="0.004">
+    </testcase>
+    <testcase classname="utils/generateToken generateAccessToken falls back to 1h when JWT_EXPIRE missing" name="utils/generateToken generateAccessToken falls back to 1h when JWT_EXPIRE missing" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken generateRefreshToken uses default refresh expiry from env when not provided" name="utils/generateToken generateRefreshToken uses default refresh expiry from env when not provided" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken generateRefreshToken falls back to 7d when env missing and no arg provided" name="utils/generateToken generateRefreshToken falls back to 7d when env missing and no arg provided" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken generateMfaToken signs with mfa flag and short expiry" name="utils/generateToken generateMfaToken signs with mfa flag and short expiry" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken verifyToken returns decoded payload or throws" name="utils/generateToken verifyToken returns decoded payload or throws" time="0.02">
+    </testcase>
+    <testcase classname="utils/generateToken generateTokens returns both tokens" name="utils/generateToken generateTokens returns both tokens" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken legacy generateToken(id) signs basic token" name="utils/generateToken legacy generateToken(id) signs basic token" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken legacy generateToken(id) uses default expiry from env or 1h fallback" name="utils/generateToken legacy generateToken(id) uses default expiry from env or 1h fallback" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken generateAccessToken uses tokenVersion default when missing" name="utils/generateToken generateAccessToken uses tokenVersion default when missing" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken generateRefreshToken uses tokenVersion default when missing" name="utils/generateToken generateRefreshToken uses tokenVersion default when missing" time="0.001">
+    </testcase>
+    <testcase classname="utils/generateToken generateTokens uses env defaults when params omitted" name="utils/generateToken generateTokens uses env defaults when params omitted" time="0.002">
+    </testcase>
+    <testcase classname="utils/generateToken generateTokens falls back to 1h/7d when env missing" name="utils/generateToken generateTokens falls back to 1h/7d when env missing" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Search Utils" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:18" time="0.386" tests="7">
+    <testcase classname="Search Utils searchCodebase should find query in matching files" name="Search Utils searchCodebase should find query in matching files" time="0.004">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should handle case insensitive search" name="Search Utils searchCodebase should handle case insensitive search" time="0.002">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should skip directories" name="Search Utils searchCodebase should skip directories" time="0.001">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should only search files with supported extensions" name="Search Utils searchCodebase should only search files with supported extensions" time="0.002">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should extract proper snippets around the query" name="Search Utils searchCodebase should extract proper snippets around the query" time="0.004">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should return empty array when no matches found" name="Search Utils searchCodebase should return empty array when no matches found" time="0.002">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should handle recursive directory traversal" name="Search Utils searchCodebase should handle recursive directory traversal" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="POST /api/results/bulk-from-ocr (integration, mocked OCR)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:18" time="16.517" tests="4">
+    <testcase classname="POST /api/results/bulk-from-ocr (integration, mocked OCR) rejects when no file uploaded" name="POST /api/results/bulk-from-ocr (integration, mocked OCR) rejects when no file uploaded" time="1.164">
+    </testcase>
+    <testcase classname="POST /api/results/bulk-from-ocr (integration, mocked OCR) processes OCR image and creates/updates results" name="POST /api/results/bulk-from-ocr (integration, mocked OCR) processes OCR image and creates/updates results" time="0.944">
+    </testcase>
+    <testcase classname="POST /api/results/bulk-from-ocr (integration, mocked OCR) forbids teacher from another school (student mismatch)" name="POST /api/results/bulk-from-ocr (integration, mocked OCR) forbids teacher from another school (student mismatch)" time="0.911">
+    </testcase>
+    <testcase classname="POST /api/results/bulk-from-ocr (integration, mocked OCR) parsing failure returns 400 when OCR text has no valid lines" name="POST /api/results/bulk-from-ocr (integration, mocked OCR) parsing failure returns 400 when OCR text has no valid lines" time="11.713">
+    </testcase>
+  </testsuite>
+  <testsuite name="school student controller (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:35" time="0.367" tests="12">
+    <testcase classname="school student controller (unit) addStudentToSchool success" name="school student controller (unit) addStudentToSchool success" time="0.003">
+    </testcase>
+    <testcase classname="school student controller (unit) addStudentToSchool duplicate email" name="school student controller (unit) addStudentToSchool duplicate email" time="0.002">
+    </testcase>
+    <testcase classname="school student controller (unit) addStudentToSchool missing name -&gt; 400" name="school student controller (unit) addStudentToSchool missing name -&gt; 400" time="0.002">
+    </testcase>
+    <testcase classname="school student controller (unit) addStudentToSchool missing email -&gt; 400" name="school student controller (unit) addStudentToSchool missing email -&gt; 400" time="0.001">
+    </testcase>
+    <testcase classname="school student controller (unit) addStudentToSchool missing password -&gt; 400" name="school student controller (unit) addStudentToSchool missing password -&gt; 400" time="0.002">
+    </testcase>
+    <testcase classname="school student controller (unit) updateStudentInSchool success" name="school student controller (unit) updateStudentInSchool success" time="0.002">
+    </testcase>
+    <testcase classname="school student controller (unit) updateStudentInSchool not found" name="school student controller (unit) updateStudentInSchool not found" time="0.001">
+    </testcase>
+    <testcase classname="school student controller (unit) updateStudentInSchool school mismatch" name="school student controller (unit) updateStudentInSchool school mismatch" time="0.002">
+    </testcase>
+    <testcase classname="school student controller (unit) updateStudentInSchool missing school object (500 defensive)" name="school student controller (unit) updateStudentInSchool missing school object (500 defensive)" time="0.001">
+    </testcase>
+    <testcase classname="school student controller (unit) removeStudentFromSchool success" name="school student controller (unit) removeStudentFromSchool success" time="0.003">
+    </testcase>
+    <testcase classname="school student controller (unit) removeStudentFromSchool not found" name="school student controller (unit) removeStudentFromSchool not found" time="0.001">
+    </testcase>
+    <testcase classname="school student controller (unit) removeStudentFromSchool missing school object (500 defensive)" name="school student controller (unit) removeStudentFromSchool missing school object (500 defensive)" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController unit (socket + light DB flows)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:35" time="0.391" tests="7">
+    <testcase classname="examController unit (socket + light DB flows) pauseExam emits socket events and updates submission" name="examController unit (socket + light DB flows) pauseExam emits socket events and updates submission" time="0.002">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) adjustExamTime increments duration and emits timeAdjusted" name="examController unit (socket + light DB flows) adjustExamTime increments duration and emits timeAdjusted" time="0.002">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) adjustExamTime rejects invalid additionalMinutes" name="examController unit (socket + light DB flows) adjustExamTime rejects invalid additionalMinutes" time="0.001">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) endExam force-submits in-progress submissions and emits examEnded" name="examController unit (socket + light DB flows) endExam force-submits in-progress submissions and emits examEnded" time="0.002">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) endExam returns 200 when no in-progress submissions" name="examController unit (socket + light DB flows) endExam returns 200 when no in-progress submissions" time="0.002">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) sendExamAnnouncement validates and emits announcement" name="examController unit (socket + light DB flows) sendExamAnnouncement validates and emits announcement" time="0.001">
+    </testcase>
+    <testcase classname="examController unit (socket + light DB flows) endExam teacher authorized (assigned by Principal) succeeds" name="examController unit (socket + light DB flows) endExam teacher authorized (assigned by Principal) succeeds" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Notification Controller" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:35" time="0.361" tests="9">
+    <testcase classname="Notification Controller getMyNotifications should return user notifications sorted by notifyAt" name="Notification Controller getMyNotifications should return user notifications sorted by notifyAt" time="0.002">
+    </testcase>
+    <testcase classname="Notification Controller getMyNotifications should handle database errors" name="Notification Controller getMyNotifications should handle database errors" time="0.001">
+    </testcase>
+    <testcase classname="Notification Controller markNotificationRead should mark notification as read successfully" name="Notification Controller markNotificationRead should mark notification as read successfully" time="0.002">
+    </testcase>
+    <testcase classname="Notification Controller markNotificationRead should return 404 for non-existent notification" name="Notification Controller markNotificationRead should return 404 for non-existent notification" time="0.001">
+    </testcase>
+    <testcase classname="Notification Controller markNotificationRead should return 403 for notification belonging to different user" name="Notification Controller markNotificationRead should return 403 for notification belonging to different user" time="0.002">
+    </testcase>
+    <testcase classname="Notification Controller markNotificationRead should handle database errors" name="Notification Controller markNotificationRead should handle database errors" time="0.004">
+    </testcase>
+    <testcase classname="Notification Controller sendPushNotification should send push notification successfully" name="Notification Controller sendPushNotification should send push notification successfully" time="0.002">
+    </testcase>
+    <testcase classname="Notification Controller sendPushNotification should throw error for missing required fields" name="Notification Controller sendPushNotification should throw error for missing required fields" time="0.001">
+    </testcase>
+    <testcase classname="Notification Controller sendPushNotification should handle Firebase messaging errors" name="Notification Controller sendPushNotification should handle Firebase messaging errors" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Feature Flag Controller" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:36" time="0.421" tests="8">
+    <testcase classname="Feature Flag Controller getAllFeatureFlags should return all feature flags sorted by name" name="Feature Flag Controller getAllFeatureFlags should return all feature flags sorted by name" time="0.002">
+    </testcase>
+    <testcase classname="Feature Flag Controller getAllFeatureFlags should handle database errors" name="Feature Flag Controller getAllFeatureFlags should handle database errors" time="0.002">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should toggle a feature flag successfully" name="Feature Flag Controller toggleFeatureFlag should toggle a feature flag successfully" time="0.002">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should disable a feature flag" name="Feature Flag Controller toggleFeatureFlag should disable a feature flag" time="0.001">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should return 404 if feature not found" name="Feature Flag Controller toggleFeatureFlag should return 404 if feature not found" time="0.002">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should prevent disabling core features" name="Feature Flag Controller toggleFeatureFlag should prevent disabling core features" time="0.001">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should allow disabling core features if already disabled" name="Feature Flag Controller toggleFeatureFlag should allow disabling core features if already disabled" time="0.001">
+    </testcase>
+    <testcase classname="Feature Flag Controller toggleFeatureFlag should handle database errors during save" name="Feature Flag Controller toggleFeatureFlag should handle database errors during save" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="subjectController ApiResponse (enhanced)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:36" time="0.565" tests="12">
+    <testcase classname="subjectController ApiResponse (enhanced) createSubject normalizes code uppercase &amp; returns 201" name="subjectController ApiResponse (enhanced) createSubject normalizes code uppercase &amp; returns 201" time="0.027">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) createSubject duplicate 400" name="subjectController ApiResponse (enhanced) createSubject duplicate 400" time="0.012">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) createSubject maxMark invalid 400" name="subjectController ApiResponse (enhanced) createSubject maxMark invalid 400" time="0.01">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) getSubjects returns items + pagination meta" name="subjectController ApiResponse (enhanced) getSubjects returns items + pagination meta" time="0.011">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) getSubjectById 200" name="subjectController ApiResponse (enhanced) getSubjectById 200" time="0.011">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) getSubjectById 404" name="subjectController ApiResponse (enhanced) getSubjectById 404" time="0.008">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) updateSubject success with code normalization" name="subjectController ApiResponse (enhanced) updateSubject success with code normalization" time="0.01">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) updateSubject maxMark invalid 400" name="subjectController ApiResponse (enhanced) updateSubject maxMark invalid 400" time="0.01">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) updateSubject code conflict 400" name="subjectController ApiResponse (enhanced) updateSubject code conflict 400" time="0.01">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) updateSubject 404" name="subjectController ApiResponse (enhanced) updateSubject 404" time="0.01">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) deleteSubject 200" name="subjectController ApiResponse (enhanced) deleteSubject 200" time="0.009">
+    </testcase>
+    <testcase classname="subjectController ApiResponse (enhanced) deleteSubject 404" name="subjectController ApiResponse (enhanced) deleteSubject 404" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Public Controller" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:37" time="0.348" tests="7">
+    <testcase classname="Public Controller getSharedAnalytics should return student analytics for valid token" name="Public Controller getSharedAnalytics should return student analytics for valid token" time="0.002">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should return 404 for invalid token" name="Public Controller getSharedAnalytics should return 404 for invalid token" time="0.001">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should return 410 for expired token" name="Public Controller getSharedAnalytics should return 410 for expired token" time="0.001">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should return 400 for unsupported analytics type" name="Public Controller getSharedAnalytics should return 400 for unsupported analytics type" time="0.002">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should handle database errors when finding share token" name="Public Controller getSharedAnalytics should handle database errors when finding share token" time="0.001">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should handle database errors during aggregation" name="Public Controller getSharedAnalytics should handle database errors during aggregation" time="0.001">
+    </testcase>
+    <testcase classname="Public Controller getSharedAnalytics should return empty performance history when no results found" name="Public Controller getSharedAnalytics should return empty performance history when no results found" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="googleDriveController (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:37" time="0.387" tests="7">
+    <testcase classname="googleDriveController (unit) getAuthUrl success (super admin)" name="googleDriveController (unit) getAuthUrl success (super admin)" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController (unit) getAuthUrl forbidden for teacher" name="googleDriveController (unit) getAuthUrl forbidden for teacher" time="0.002">
+    </testcase>
+    <testcase classname="googleDriveController (unit) disconnectDrive resets state" name="googleDriveController (unit) disconnectDrive resets state" time="0.001">
+    </testcase>
+    <testcase classname="googleDriveController (unit) uploadTermData validates fields" name="googleDriveController (unit) uploadTermData validates fields" time="0.001">
+    </testcase>
+    <testcase classname="googleDriveController (unit) createSchoolStructure created 201" name="googleDriveController (unit) createSchoolStructure created 201" time="0.001">
+    </testcase>
+    <testcase classname="googleDriveController (unit) listFiles success" name="googleDriveController (unit) listFiles success" time="0.004">
+    </testcase>
+    <testcase classname="googleDriveController (unit) getDriveStatus returns status object" name="googleDriveController (unit) getDriveStatus returns status object" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppError" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:37" time="0.35" tests="19">
+    <testcase classname="AppError should create an error with message and status code" name="AppError should create an error with message and status code" time="0.002">
+    </testcase>
+    <testcase classname="AppError should set status to error for 5xx codes" name="AppError should set status to error for 5xx codes" time="0.001">
+    </testcase>
+    <testcase classname="AppError should default to 500 status code" name="AppError should default to 500 status code" time="0.001">
+    </testcase>
+    <testcase classname="ValidationError should create a validation error with 400 status" name="ValidationError should create a validation error with 400 status" time="0.001">
+    </testcase>
+    <testcase classname="ValidationError should include validation details when provided" name="ValidationError should include validation details when provided" time="0.001">
+    </testcase>
+    <testcase classname="AuthenticationError should create an authentication error with 401 status" name="AuthenticationError should create an authentication error with 401 status" time="0.001">
+    </testcase>
+    <testcase classname="AuthenticationError should use default message when none provided" name="AuthenticationError should use default message when none provided" time="0.001">
+    </testcase>
+    <testcase classname="AuthorizationError should create an authorization error with 403 status" name="AuthorizationError should create an authorization error with 403 status" time="0.001">
+    </testcase>
+    <testcase classname="AuthorizationError should use default message when none provided" name="AuthorizationError should use default message when none provided" time="0.001">
+    </testcase>
+    <testcase classname="ForbiddenError should create a forbidden error with 403 status" name="ForbiddenError should create a forbidden error with 403 status" time="0.001">
+    </testcase>
+    <testcase classname="ForbiddenError should use default message when none provided" name="ForbiddenError should use default message when none provided" time="0.001">
+    </testcase>
+    <testcase classname="NotFoundError should create a not found error with 404 status" name="NotFoundError should create a not found error with 404 status" time="0.001">
+    </testcase>
+    <testcase classname="NotFoundError should use default resource when none provided" name="NotFoundError should use default resource when none provided" time="0.001">
+    </testcase>
+    <testcase classname="ConflictError should create a conflict error with 409 status" name="ConflictError should create a conflict error with 409 status" time="0.001">
+    </testcase>
+    <testcase classname="ConflictError should use default message when none provided" name="ConflictError should use default message when none provided" time="0.001">
+    </testcase>
+    <testcase classname="DatabaseError should create a database error with 500 status" name="DatabaseError should create a database error with 500 status" time="0.001">
+    </testcase>
+    <testcase classname="DatabaseError should use default message when none provided" name="DatabaseError should use default message when none provided" time="0.001">
+    </testcase>
+    <testcase classname="ExternalServiceError should create an external service error with 502 status" name="ExternalServiceError should create an external service error with 502 status" time="0.001">
+    </testcase>
+    <testcase classname="ExternalServiceError should use default message when none provided" name="ExternalServiceError should use default message when none provided" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="assignmentController (ApiResponse)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:38" time="0.493" tests="7">
+    <testcase classname="assignmentController (ApiResponse) createAssignment returns 201 with ApiResponse shape" name="assignmentController (ApiResponse) createAssignment returns 201 with ApiResponse shape" time="0.019">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) getAssignmentsForClass returns 200 with ApiResponse shape" name="assignmentController (ApiResponse) getAssignmentsForClass returns 200 with ApiResponse shape" time="0.01">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) submitAssignment rejects non-student" name="assignmentController (ApiResponse) submitAssignment rejects non-student" time="0.011">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) submitAssignment returns 201 for valid student" name="assignmentController (ApiResponse) submitAssignment returns 201 for valid student" time="0.011">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) submitAssignment 404 when assignment missing" name="assignmentController (ApiResponse) submitAssignment 404 when assignment missing" time="0.009">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) gradeSubmission returns 200 with ApiResponse shape" name="assignmentController (ApiResponse) gradeSubmission returns 200 with ApiResponse shape" time="0.01">
+    </testcase>
+    <testcase classname="assignmentController (ApiResponse) gradeSubmission 404 when submission missing" name="assignmentController (ApiResponse) gradeSubmission 404 when submission missing" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="server.js (unit/light integration)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:38" time="1.28" tests="9">
+    <testcase classname="server.js (unit/light integration) exports app and server objects" name="server.js (unit/light integration) exports app and server objects" time="0.001">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET / responds with API status payload" name="server.js (unit/light integration) GET / responds with API status payload" time="0.016">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET /healthz returns healthy status structure" name="server.js (unit/light integration) GET /healthz returns healthy status structure" time="0.012">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET /readyz returns healthy status when cache is connected (actual current behavior)" name="server.js (unit/light integration) GET /readyz returns healthy status when cache is connected (actual current behavior)" time="0.01">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET /readyz returns unhealthy status when cache is disconnected (actual current behavior)" name="server.js (unit/light integration) GET /readyz returns unhealthy status when cache is disconnected (actual current behavior)" time="0.01">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET /readyz handles health check errors gracefully" name="server.js (unit/light integration) GET /readyz handles health check errors gracefully" time="0.012">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) GET /metrics is reachable (text/plain or exposition format)" name="server.js (unit/light integration) GET /metrics is reachable (text/plain or exposition format)" time="0.01">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) helmet security headers applied" name="server.js (unit/light integration) helmet security headers applied" time="0.01">
+    </testcase>
+    <testcase classname="server.js (unit/light integration) unknown route returns JSON 404 with message" name="server.js (unit/light integration) unknown route returns JSON 404 with message" time="0.012">
+    </testcase>
+  </testsuite>
+  <testsuite name="Analysis Controller (Mocked Unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:40" time="0.447" tests="11">
+    <testcase classname="Analysis Controller (Mocked Unit) getGlobalOverview returns counts" name="Analysis Controller (Mocked Unit) getGlobalOverview returns counts" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getSystemWideAnalytics requires session" name="Analysis Controller (Mocked Unit) getSystemWideAnalytics requires session" time="0.003">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getStudentAnalytics invalid id" name="Analysis Controller (Mocked Unit) getStudentAnalytics invalid id" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getTeacherAnalytics requires session" name="Analysis Controller (Mocked Unit) getTeacherAnalytics requires session" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getSchoolDashboard requires params" name="Analysis Controller (Mocked Unit) getSchoolDashboard requires params" time="0.005">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) queryStudents basic" name="Analysis Controller (Mocked Unit) queryStudents basic" time="0.001">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getClassroomLeaderboard validates params" name="Analysis Controller (Mocked Unit) getClassroomLeaderboard validates params" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getDecliningStudents requires schoolId/session" name="Analysis Controller (Mocked Unit) getDecliningStudents requires schoolId/session" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) createAnalyticsShareLink invalid type" name="Analysis Controller (Mocked Unit) createAnalyticsShareLink invalid type" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getTeacherActivityAnalytics needs date range" name="Analysis Controller (Mocked Unit) getTeacherActivityAnalytics needs date range" time="0.002">
+    </testcase>
+    <testcase classname="Analysis Controller (Mocked Unit) getTimetableCompliance needs date range" name="Analysis Controller (Mocked Unit) getTimetableCompliance needs date range" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="result voice note controller (unit)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:40" time="0.45" tests="10">
+    <testcase classname="result voice note controller (unit) uploadVoiceNote rejects missing file" name="result voice note controller (unit) uploadVoiceNote rejects missing file" time="0.002">
+    </testcase>
+    <testcase classname="result voice note controller (unit) uploadVoiceNote 404 when result missing" name="result voice note controller (unit) uploadVoiceNote 404 when result missing" time="0.004">
+    </testcase>
+    <testcase classname="result voice note controller (unit) uploadVoiceNote forbids cross-school access" name="result voice note controller (unit) uploadVoiceNote forbids cross-school access" time="0.002">
+    </testcase>
+    <testcase classname="result voice note controller (unit) uploadVoiceNote prevents overwrite teacher" name="result voice note controller (unit) uploadVoiceNote prevents overwrite teacher" time="0.001">
+    </testcase>
+    <testcase classname="result voice note controller (unit) uploadVoiceNote success teacher path" name="result voice note controller (unit) uploadVoiceNote success teacher path" time="0.001">
+    </testcase>
+    <testcase classname="result voice note controller (unit) deleteVoiceNote 404 when result missing" name="result voice note controller (unit) deleteVoiceNote 404 when result missing" time="0.001">
+    </testcase>
+    <testcase classname="result voice note controller (unit) deleteVoiceNote forbidden cross-school" name="result voice note controller (unit) deleteVoiceNote forbidden cross-school" time="0.002">
+    </testcase>
+    <testcase classname="result voice note controller (unit) deleteVoiceNote rejects non-pending" name="result voice note controller (unit) deleteVoiceNote rejects non-pending" time="0.001">
+    </testcase>
+    <testcase classname="result voice note controller (unit) deleteVoiceNote 404 when no note for role" name="result voice note controller (unit) deleteVoiceNote 404 when no note for role" time="0.001">
+    </testcase>
+    <testcase classname="result voice note controller (unit) deleteVoiceNote success teacher note" name="result voice note controller (unit) deleteVoiceNote success teacher note" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="HttpClient" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:41" time="0.664" tests="5">
+    <testcase classname="HttpClient get() returns data on success" name="HttpClient get() returns data on success" time="0.072">
+    </testcase>
+    <testcase classname="HttpClient post() wraps unknown errors as ExternalServiceError" name="HttpClient post() wraps unknown errors as ExternalServiceError" time="0.027">
+    </testcase>
+    <testcase classname="HttpClient retry logic on 5xx errors then throws ExternalServiceError after retries" name="HttpClient retry logic on 5xx errors then throws ExternalServiceError after retries" time="0.042">
+    </testcase>
+    <testcase classname="HttpClient does not retry on 4xx client error and throws ExternalServiceError" name="HttpClient does not retry on 4xx client error and throws ExternalServiceError" time="0.004">
+    </testcase>
+    <testcase classname="HttpClient timeout error maps to ExternalServiceError(&quot;Request timeout&quot;)" name="HttpClient timeout error maps to ExternalServiceError(&quot;Request timeout&quot;)" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/examMiddleware.checkExamAccess" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:41" time="1.117" tests="6">
+    <testcase classname="middleware/examMiddleware.checkExamAccess rejects invalid exam id format" name="middleware/examMiddleware.checkExamAccess rejects invalid exam id format" time="0.118">
+    </testcase>
+    <testcase classname="middleware/examMiddleware.checkExamAccess 404 when exam not found" name="middleware/examMiddleware.checkExamAccess 404 when exam not found" time="0.156">
+    </testcase>
+    <testcase classname="middleware/examMiddleware.checkExamAccess allows GLOBAL_SUPER_ADMIN regardless of school" name="middleware/examMiddleware.checkExamAccess allows GLOBAL_SUPER_ADMIN regardless of school" time="0.117">
+    </testcase>
+    <testcase classname="middleware/examMiddleware.checkExamAccess forbids when user.school mismatch" name="middleware/examMiddleware.checkExamAccess forbids when user.school mismatch" time="0.115">
+    </testcase>
+    <testcase classname="middleware/examMiddleware.checkExamAccess allows when user.school matches" name="middleware/examMiddleware.checkExamAccess allows when user.school matches" time="0.115">
+    </testcase>
+    <testcase classname="middleware/examMiddleware.checkExamAccess supports req.params.id fallback" name="middleware/examMiddleware.checkExamAccess supports req.params.id fallback" time="0.152">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController begin/resume/finalize negative paths" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:42" time="0.404" tests="6">
+    <testcase classname="examController begin/resume/finalize negative paths beginExam 404 when submission not found for student" name="examController begin/resume/finalize negative paths beginExam 404 when submission not found for student" time="0.005">
+    </testcase>
+    <testcase classname="examController begin/resume/finalize negative paths beginExam 400 when submission not in ready state" name="examController begin/resume/finalize negative paths beginExam 400 when submission not in ready state" time="0.002">
+    </testcase>
+    <testcase classname="examController begin/resume/finalize negative paths resumeExam 404 when submission not found" name="examController begin/resume/finalize negative paths resumeExam 404 when submission not found" time="0.001">
+    </testcase>
+    <testcase classname="examController begin/resume/finalize negative paths resumeExam 400 when submission not paused" name="examController begin/resume/finalize negative paths resumeExam 400 when submission not paused" time="0.001">
+    </testcase>
+    <testcase classname="examController begin/resume/finalize negative paths finalizeSubmission 404 when submission to check not found" name="examController begin/resume/finalize negative paths finalizeSubmission 404 when submission to check not found" time="0.002">
+    </testcase>
+    <testcase classname="examController begin/resume/finalize negative paths finalizeSubmission 404 when update returns null (already finalized or not owner)" name="examController begin/resume/finalize negative paths finalizeSubmission 404 when update returns null (already finalized or not owner)" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="timetableController ApiResponse" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:43" time="0.513" tests="6">
+    <testcase classname="timetableController ApiResponse createTimetableEntry 201 strict envelope" name="timetableController ApiResponse createTimetableEntry 201 strict envelope" time="0.023">
+    </testcase>
+    <testcase classname="timetableController ApiResponse createTimetableEntry forbidden 403" name="timetableController ApiResponse createTimetableEntry forbidden 403" time="0.011">
+    </testcase>
+    <testcase classname="timetableController ApiResponse getTimetable 200" name="timetableController ApiResponse getTimetable 200" time="0.01">
+    </testcase>
+    <testcase classname="timetableController ApiResponse deleteTimetableEntry 200" name="timetableController ApiResponse deleteTimetableEntry 200" time="0.012">
+    </testcase>
+    <testcase classname="timetableController ApiResponse deleteTimetableEntry missing 404" name="timetableController ApiResponse deleteTimetableEntry missing 404" time="0.009">
+    </testcase>
+    <testcase classname="timetableController ApiResponse createTimetableEntry validation missing classroom-like field" name="timetableController ApiResponse createTimetableEntry validation missing classroom-like field" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/requestTracking" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:43" time="0.402" tests="6">
+    <testcase classname="middleware/requestTracking adds request id, headers, and logs on json" name="middleware/requestTracking adds request id, headers, and logs on json" time="0.002">
+    </testcase>
+    <testcase classname="middleware/requestTracking uses provided x-request-id header (no uuid)" name="middleware/requestTracking uses provided x-request-id header (no uuid)" time="0.001">
+    </testcase>
+    <testcase classname="middleware/requestTracking slowRequestLogger triggers warn when threshold exceeded" name="middleware/requestTracking slowRequestLogger triggers warn when threshold exceeded" time="0.002">
+    </testcase>
+    <testcase classname="middleware/requestTracking slowRequestLogger does not warn when under threshold" name="middleware/requestTracking slowRequestLogger does not warn when under threshold" time="0.001">
+    </testcase>
+    <testcase classname="middleware/requestTracking slowRequestLogger boundary: duration equals threshold -&gt; no warn" name="middleware/requestTracking slowRequestLogger boundary: duration equals threshold -&gt; no warn" time="0.001">
+    </testcase>
+    <testcase classname="middleware/requestTracking slowRequestLogger boundary: duration greater than threshold -&gt; warn" name="middleware/requestTracking slowRequestLogger boundary: duration greater than threshold -&gt; warn" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="bulkImportResults" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:44" time="0.836" tests="6">
+    <testcase classname="bulkImportResults returns error when no file uploaded" name="bulkImportResults returns error when no file uploaded" time="0.013">
+    </testcase>
+    <testcase classname="bulkImportResults imports rows and reports errors" name="bulkImportResults imports rows and reports errors" time="0.272">
+    </testcase>
+    <testcase classname="parseOcrText parses valid line with subjects" name="parseOcrText parses valid line with subjects" time="0.001">
+    </testcase>
+    <testcase classname="parseOcrText records error for insufficient scores" name="parseOcrText records error for insufficient scores" time="0.001">
+    </testcase>
+    <testcase classname="getAllResults scoping forbidden for teacher role" name="getAllResults scoping forbidden for teacher role" time="0.011">
+    </testcase>
+    <testcase classname="getAllResults scoping filters by school for principal" name="getAllResults scoping filters by school for principal" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="eventController ApiResponse" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:45" time="0.609" tests="8">
+    <testcase classname="eventController ApiResponse createEvent 201" name="eventController ApiResponse createEvent 201" time="0.021">
+    </testcase>
+    <testcase classname="eventController ApiResponse getEvents 200" name="eventController ApiResponse getEvents 200" time="0.01">
+    </testcase>
+    <testcase classname="eventController ApiResponse updateEvent 200" name="eventController ApiResponse updateEvent 200" time="0.014">
+    </testcase>
+    <testcase classname="eventController ApiResponse updateEvent 404" name="eventController ApiResponse updateEvent 404" time="0.01">
+    </testcase>
+    <testcase classname="eventController ApiResponse updateEvent 401 cross-school" name="eventController ApiResponse updateEvent 401 cross-school" time="0.01">
+    </testcase>
+    <testcase classname="eventController ApiResponse deleteEvent 404" name="eventController ApiResponse deleteEvent 404" time="0.01">
+    </testcase>
+    <testcase classname="eventController ApiResponse deleteEvent 200" name="eventController ApiResponse deleteEvent 200" time="0.012">
+    </testcase>
+    <testcase classname="eventController ApiResponse deleteEvent 401 cross-school" name="eventController ApiResponse deleteEvent 401 cross-school" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="resultController multi-status endpoints" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:45" time="0.528" tests="4">
+    <testcase classname="resultController multi-status endpoints submitResultsFromOCR 207 multi-status with summary meta" name="resultController multi-status endpoints submitResultsFromOCR 207 multi-status with summary meta" time="0.025">
+    </testcase>
+    <testcase classname="resultController multi-status endpoints submitResultsFromOCR validation error missing fields" name="resultController multi-status endpoints submitResultsFromOCR validation error missing fields" time="0.019">
+    </testcase>
+    <testcase classname="resultController multi-status endpoints generateAnnualResultsForClassroom schedules 202" name="resultController multi-status endpoints generateAnnualResultsForClassroom schedules 202" time="0.012">
+    </testcase>
+    <testcase classname="resultController multi-status endpoints bulkExportResults returns csv headers" name="resultController multi-status endpoints bulkExportResults returns csv headers" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="CSV Result Utils" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:46" time="0.357" tests="4">
+    <testcase classname="CSV Result Utils parseCsvFile should parse CSV file and return array of objects" name="CSV Result Utils parseCsvFile should parse CSV file and return array of objects" time="0.003">
+    </testcase>
+    <testcase classname="CSV Result Utils parseCsvFile should reject on file read error" name="CSV Result Utils parseCsvFile should reject on file read error" time="0.007">
+    </testcase>
+    <testcase classname="CSV Result Utils convertToCsv should convert result data to CSV string" name="CSV Result Utils convertToCsv should convert result data to CSV string" time="0.001">
+    </testcase>
+    <testcase classname="CSV Result Utils convertToCsv should handle empty result array" name="CSV Result Utils convertToCsv should handle empty result array" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="userController ApiResponse subset" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:46" time="0.692" tests="4">
+    <testcase classname="userController ApiResponse subset registerUser returns created envelope" name="userController ApiResponse subset registerUser returns created envelope" time="0.017">
+    </testcase>
+    <testcase classname="userController ApiResponse subset loginUser success envelope" name="userController ApiResponse subset loginUser success envelope" time="0.011">
+    </testcase>
+    <testcase classname="userController ApiResponse subset getMe returns profile envelope" name="userController ApiResponse subset getMe returns profile envelope" time="0.012">
+    </testcase>
+    <testcase classname="userController ApiResponse subset createUser returns 201 envelope" name="userController ApiResponse subset createUser returns 201 envelope" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="bulkPublishExamScores summary counts" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:47" time="0.384" tests="2">
+    <testcase classname="bulkPublishExamScores summary counts processes batch and returns 207 with success/fail counts" name="bulkPublishExamScores summary counts processes batch and returns 207 with success/fail counts" time="0.003">
+    </testcase>
+    <testcase classname="bulkPublishExamScores summary counts uses cached results when available (no DB fetch)" name="bulkPublishExamScores summary counts uses cached results when available (no DB fetch)" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="classController ApiResponse migration" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:47" time="0.356" tests="3">
+    <testcase classname="classController ApiResponse migration createClassroom returns created ApiResponse shape" name="classController ApiResponse migration createClassroom returns created ApiResponse shape" time="0.006">
+    </testcase>
+    <testcase classname="classController ApiResponse migration getClassrooms returns list with wrapper" name="classController ApiResponse migration getClassrooms returns list with wrapper" time="0.002">
+    </testcase>
+    <testcase classname="classController ApiResponse migration updateClassroom returns updated classroom wrapped" name="classController ApiResponse migration updateClassroom returns updated classroom wrapped" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Token Generation Utils" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:48" time="0.444" tests="7">
+    <testcase classname="Token Generation Utils generateAccessToken should generate a valid JWT token" name="Token Generation Utils generateAccessToken should generate a valid JWT token" time="0.007">
+    </testcase>
+    <testcase classname="Token Generation Utils generateAccessToken should include additional data if provided" name="Token Generation Utils generateAccessToken should include additional data if provided" time="0.004">
+    </testcase>
+    <testcase classname="Token Generation Utils generateAccessToken should set correct expiration" name="Token Generation Utils generateAccessToken should set correct expiration" time="0.003">
+    </testcase>
+    <testcase classname="Token Generation Utils generateRefreshToken should generate a refresh token with longer expiration" name="Token Generation Utils generateRefreshToken should generate a refresh token with longer expiration" time="0.004">
+    </testcase>
+    <testcase classname="Token Generation Utils verifyToken should verify a valid token" name="Token Generation Utils verifyToken should verify a valid token" time="0.004">
+    </testcase>
+    <testcase classname="Token Generation Utils verifyToken should throw error for invalid token" name="Token Generation Utils verifyToken should throw error for invalid token" time="0.016">
+    </testcase>
+    <testcase classname="Token Generation Utils verifyToken should throw error for expired token" name="Token Generation Utils verifyToken should throw error for expired token" time="0.007">
+    </testcase>
+  </testsuite>
+  <testsuite name="Search Utils" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:48" time="0.36" tests="3">
+    <testcase classname="Search Utils searchCodebase should find query in matching files" name="Search Utils searchCodebase should find query in matching files" time="0.004">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should handle case insensitive search" name="Search Utils searchCodebase should handle case insensitive search" time="0.001">
+    </testcase>
+    <testcase classname="Search Utils searchCodebase should only search supported extensions" name="Search Utils searchCodebase should only search supported extensions" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/validationMiddleware.validate" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:49" time="0.626" tests="4">
+    <testcase classname="middleware/validationMiddleware.validate passes and strips unknown + converts types" name="middleware/validationMiddleware.validate passes and strips unknown + converts types" time="0.061">
+    </testcase>
+    <testcase classname="middleware/validationMiddleware.validate returns ValidationError via next with details on failure" name="middleware/validationMiddleware.validate returns ValidationError via next with details on failure" time="0.055">
+    </testcase>
+    <testcase classname="middleware/validationMiddleware.validate validates params and assigns cleaned value" name="middleware/validationMiddleware.validate validates params and assigns cleaned value" time="0.053">
+    </testcase>
+    <testcase classname="middleware/validationMiddleware.validate applies query defaults and conversion" name="middleware/validationMiddleware.validate applies query defaults and conversion" time="0.053">
+    </testcase>
+  </testsuite>
+  <testsuite name="postExamScoreToResult transaction success path" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:49" time="0.408" tests="1">
+    <testcase classname="postExamScoreToResult transaction success path uses transaction session and returns 200 when wasNew=false" name="postExamScoreToResult transaction success path uses transaction session and returns 200 when wasNew=false" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="addQuestionToExam transaction success" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:50" time="0.356" tests="1">
+    <testcase classname="addQuestionToExam transaction success uses session and commits when supported" name="addQuestionToExam transaction success uses session and commits when supported" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach helpers" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:50" time="0.452" tests="7">
+    <testcase classname="AIPedagogicalCoach helpers calculateOverallScore returns 0-100 normalized" name="AIPedagogicalCoach helpers calculateOverallScore returns 0-100 normalized" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers buildAIPrompt includes key fields" name="AIPedagogicalCoach helpers buildAIPrompt includes key fields" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers parseAIResponse extracts sections heuristically" name="AIPedagogicalCoach helpers parseAIResponse extracts sections heuristically" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers generateStructuredFeedback composes final object" name="AIPedagogicalCoach helpers generateStructuredFeedback composes final object" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers determinePriority maps by challenges/sentiment" name="AIPedagogicalCoach helpers determinePriority maps by challenges/sentiment" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers estimateEngagement checks topic keywords" name="AIPedagogicalCoach helpers estimateEngagement checks topic keywords" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach helpers generateDefaultSuggestions falls back when no specific challenge" name="AIPedagogicalCoach helpers generateDefaultSuggestions falls back when no specific challenge" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="utils/apiResponse" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:50" time="0.417" tests="7">
+    <testcase classname="utils/apiResponse ok returns 200 with data wrapper" name="utils/apiResponse ok returns 200 with data wrapper" time="0.003">
+    </testcase>
+    <testcase classname="utils/apiResponse created returns 201 with data" name="utils/apiResponse created returns 201 with data" time="0.001">
+    </testcase>
+    <testcase classname="utils/apiResponse error returns provided status &amp; message" name="utils/apiResponse error returns provided status &amp; message" time="0.001">
+    </testcase>
+    <testcase classname="utils/apiResponse respond.ok works via respond facade" name="utils/apiResponse respond.ok works via respond facade" time="0.001">
+    </testcase>
+    <testcase classname="utils/apiResponse ok omits data key when data parameter omitted" name="utils/apiResponse ok omits data key when data parameter omitted" time="0.001">
+    </testcase>
+    <testcase classname="utils/apiResponse ok truly omits data when only res passed" name="utils/apiResponse ok truly omits data when only res passed" time="0.001">
+    </testcase>
+    <testcase classname="utils/apiResponse error includes type and details when provided" name="utils/apiResponse error includes type and details when provided" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="middleware/apiUsageTracker" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:51" time="0.373" tests="4">
+    <testcase classname="middleware/apiUsageTracker no-op when req.user missing" name="middleware/apiUsageTracker no-op when req.user missing" time="0.002">
+    </testcase>
+    <testcase classname="middleware/apiUsageTracker increments usage and sets header" name="middleware/apiUsageTracker increments usage and sets header" time="0.002">
+    </testcase>
+    <testcase classname="middleware/apiUsageTracker increments from zero/undefined and sets header to 1" name="middleware/apiUsageTracker increments from zero/undefined and sets header to 1" time="0.001">
+    </testcase>
+    <testcase classname="middleware/apiUsageTracker logs error but still next on failure" name="middleware/apiUsageTracker logs error but still next on failure" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="validationHelpers" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:51" time="0.41" tests="7">
+    <testcase classname="validationHelpers normalizeSession keeps slash and converts dash" name="validationHelpers normalizeSession keeps slash and converts dash" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers isValidSessionFormat detects valid formats" name="validationHelpers isValidSessionFormat detects valid formats" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers validateObjectId pushes error for invalid id" name="validationHelpers validateObjectId pushes error for invalid id" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers validateTermNumeric only accepts numeric strings" name="validationHelpers validateTermNumeric only accepts numeric strings" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers validateISODate rejects bad format and bad value" name="validationHelpers validateISODate rejects bad format and bad value" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers validatePositiveNumber enforces &gt; 0" name="validationHelpers validatePositiveNumber enforces &gt; 0" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers throwIfErrors throws ValidationError with details" name="validationHelpers throwIfErrors throws ValidationError with details" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="postExamScoreToResult fallback transaction" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:52" time="0.429" tests="1">
+    <testcase classname="postExamScoreToResult fallback transaction falls back when transaction unsupported and returns 201 on new result" name="postExamScoreToResult fallback transaction falls back when transaction unsupported and returns 201 on new result" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="CSV Utils" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:52" time="0.372" tests="3">
+    <testcase classname="CSV Utils parseCsvFile should reject on file read error" name="CSV Utils parseCsvFile should reject on file read error" time="0.008">
+    </testcase>
+    <testcase classname="CSV Utils convertToCsv should convert array of objects to CSV string with specified fields" name="CSV Utils convertToCsv should convert array of objects to CSV string with specified fields" time="0.003">
+    </testcase>
+    <testcase classname="CSV Utils convertToCsv should handle empty array" name="CSV Utils convertToCsv should handle empty array" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach more coverage" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:52" time="0.409" tests="4">
+    <testcase classname="AIPedagogicalCoach more coverage notifyTeacher triggers email when high priority" name="AIPedagogicalCoach more coverage notifyTeacher triggers email when high priority" time="0.002">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach more coverage formatNotificationMessage priority branches" name="AIPedagogicalCoach more coverage formatNotificationMessage priority branches" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach more coverage getCoachingHistory maps activities" name="AIPedagogicalCoach more coverage getCoachingHistory maps activities" time="0.001">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach more coverage getSchoolCoachingAnalytics returns aggregation result or default" name="AIPedagogicalCoach more coverage getSchoolCoachingAnalytics returns aggregation result or default" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach provider init and error paths" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:53" time="0.99" tests="3">
+    <testcase classname="AIPedagogicalCoach provider init and error paths initializes with null provider when API keys missing" name="AIPedagogicalCoach provider init and error paths initializes with null provider when API keys missing" time="0.185">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach provider init and error paths generateAIFeedback returns null when provider throws" name="AIPedagogicalCoach provider init and error paths generateAIFeedback returns null when provider throws" time="0.184">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach provider init and error paths generateAIFeedback returns null when provider is null" name="AIPedagogicalCoach provider init and error paths generateAIFeedback returns null when provider is null" time="0.196">
+    </testcase>
+  </testsuite>
+  <testsuite name="examController time edges" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:54" time="0.406" tests="3">
+    <testcase classname="examController time edges pauseExam 404 when submission missing" name="examController time edges pauseExam 404 when submission missing" time="0.002">
+    </testcase>
+    <testcase classname="examController time edges pauseExam 400 when not in-progress" name="examController time edges pauseExam 400 when not in-progress" time="0.001">
+    </testcase>
+    <testcase classname="examController time edges endExam teacher cannot end before scheduledEndAt" name="examController time edges endExam teacher cannot end before scheduledEndAt" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="config/security" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:54" time="0.559" tests="4">
+    <testcase classname="config/security createRateLimiters returns expected keys" name="config/security createRateLimiters returns expected keys" time="0.02">
+    </testcase>
+    <testcase classname="config/security setupSecurity applies headers and cors (development)" name="config/security setupSecurity applies headers and cors (development)" time="0.022">
+    </testcase>
+    <testcase classname="config/security setupSecurity development allows listed origin, rejects unknown via error path" name="config/security setupSecurity development allows listed origin, rejects unknown via error path" time="0.021">
+    </testcase>
+    <testcase classname="config/security securityConfig has production and development" name="config/security securityConfig has production and development" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="notificationService sendAuthNotificationToUser" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:55" time="0.442" tests="3">
+    <testcase classname="notificationService sendAuthNotificationToUser returns pushed true with pruning invalid tokens" name="notificationService sendAuthNotificationToUser returns pushed true with pruning invalid tokens" time="0.002">
+    </testcase>
+    <testcase classname="notificationService sendAuthNotificationToUser returns reason no-tokens when user has no tokens" name="notificationService sendAuthNotificationToUser returns reason no-tokens when user has no tokens" time="0.003">
+    </testcase>
+    <testcase classname="notificationService sendAuthNotificationToUser returns db-error when notification create throws" name="notificationService sendAuthNotificationToUser returns db-error when notification create throws" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach provider success paths" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:55" time="1.138" tests="2">
+    <testcase classname="AIPedagogicalCoach provider success paths Gemini-like provider success returns parsed sections" name="AIPedagogicalCoach provider success paths Gemini-like provider success returns parsed sections" time="0.202">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach provider success paths OpenAI-like provider success returns parsed sections" name="AIPedagogicalCoach provider success paths OpenAI-like provider success returns parsed sections" time="0.288">
+    </testcase>
+  </testsuite>
+  <testsuite name="ApiResponse" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:57" time="0.545" tests="7">
+    <testcase classname="ApiResponse Constructor should create a success response" name="ApiResponse Constructor should create a success response" time="0.001">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should create an error response" name="ApiResponse Constructor should create an error response" time="0.001">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should default message to &quot;Success&quot;" name="ApiResponse Constructor should default message to &quot;Success&quot;" time="0.001">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should set success to false for 4xx status codes" name="ApiResponse Constructor should set success to false for 4xx status codes" time="0.001">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should set success to false for 5xx status codes" name="ApiResponse Constructor should set success to false for 5xx status codes" time="0.001">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should set success to true for 2xx status codes" name="ApiResponse Constructor should set success to true for 2xx status codes" time="0">
+    </testcase>
+    <testcase classname="ApiResponse Constructor should set success to true for 3xx status codes" name="ApiResponse Constructor should set success to true for 3xx status codes" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="resultService.calc helpers" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:57" time="0.394" tests="5">
+    <testcase classname="resultService.calc helpers calculatePosition default param (no args) returns []" name="resultService.calc helpers calculatePosition default param (no args) returns []" time="0.001">
+    </testcase>
+    <testcase classname="resultService.calc helpers calculatePosition handles ties correctly (competition ranking)" name="resultService.calc helpers calculatePosition handles ties correctly (competition ranking)" time="0">
+    </testcase>
+    <testcase classname="resultService.calc helpers calculateGrade clamps input to [0,100] and handles NaN" name="resultService.calc helpers calculateGrade clamps input to [0,100] and handles NaN" time="0.001">
+    </testcase>
+    <testcase classname="resultService.calc helpers calculateGrade falls back to last band when no range matches" name="resultService.calc helpers calculateGrade falls back to last band when no range matches" time="0.001">
+    </testcase>
+    <testcase classname="resultService.calc helpers calculateGrade returns F9 for non-number inputs" name="resultService.calc helpers calculateGrade returns F9 for non-number inputs" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="featureFlagMiddleware" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:57" time="0.366" tests="3">
+    <testcase classname="featureFlagMiddleware allows when enabled" name="featureFlagMiddleware allows when enabled" time="0.002">
+    </testcase>
+    <testcase classname="featureFlagMiddleware denies when disabled or missing" name="featureFlagMiddleware denies when disabled or missing" time="0.002">
+    </testcase>
+    <testcase classname="featureFlagMiddleware uses cache on repeated calls" name="featureFlagMiddleware uses cache on repeated calls" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="featureFlagController unit (mocked model)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:58" time="0.352" tests="2">
+    <testcase classname="featureFlagController unit (mocked model) getAllFeatureFlags returns sorted flags" name="featureFlagController unit (mocked model) getAllFeatureFlags returns sorted flags" time="0.002">
+    </testcase>
+    <testcase classname="featureFlagController unit (mocked model) toggleFeatureFlag enables a disabled non-core feature" name="featureFlagController unit (mocked model) toggleFeatureFlag enables a disabled non-core feature" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="schemeController.createScheme" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:58" time="0.462" tests="2">
+    <testcase classname="schemeController.createScheme validates required fields" name="schemeController.createScheme validates required fields" time="0.003">
+    </testcase>
+    <testcase classname="schemeController.createScheme creates scheme successfully" name="schemeController.createScheme creates scheme successfully" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="rateLimitMiddleware authLimiter" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:59" time="0.357" tests="1">
+    <testcase classname="rateLimitMiddleware authLimiter allows under the limit then blocks after threshold" name="rateLimitMiddleware authLimiter allows under the limit then blocks after threshold" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="AIPedagogicalCoach provider init success paths" errors="0" failures="0" skipped="0" timestamp="2025-09-18T22:59:59" time="0.826" tests="2">
+    <testcase classname="AIPedagogicalCoach provider init success paths initializes Gemini provider when GEMINI_API_KEY is set" name="AIPedagogicalCoach provider init success paths initializes Gemini provider when GEMINI_API_KEY is set" time="0.23">
+    </testcase>
+    <testcase classname="AIPedagogicalCoach provider init success paths initializes OpenAI provider when OPENAI_API_KEY is set" name="AIPedagogicalCoach provider init success paths initializes OpenAI provider when OPENAI_API_KEY is set" time="0.24">
+    </testcase>
+  </testsuite>
+  <testsuite name="adjustExamTime authorization branch for teacher invigilator" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:00" time="0.397" tests="1">
+    <testcase classname="adjustExamTime authorization branch for teacher invigilator teacher must be invigilator" name="adjustExamTime authorization branch for teacher invigilator teacher must be invigilator" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="finalizeSubmission late branch" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:00" time="0.441" tests="1">
+    <testcase classname="finalizeSubmission late branch logs late submission and still finalizes" name="finalizeSubmission late branch logs late submission and still finalizes" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="endExam authorization branches" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:01" time="0.396" tests="1">
+    <testcase classname="endExam authorization branches teacher must be assigned by allowed role" name="endExam authorization branches teacher must be assigned by allowed role" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="requestTracking middleware" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:01" time="0.362" tests="1">
+    <testcase classname="requestTracking middleware assigns request id and wraps res.json" name="requestTracking middleware assigns request id and wraps res.json" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="roleMiddleware" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:02" time="0.408" tests="3">
+    <testcase classname="roleMiddleware passes when role allowed" name="roleMiddleware passes when role allowed" time="0.002">
+    </testcase>
+    <testcase classname="roleMiddleware fails when role missing" name="roleMiddleware fails when role missing" time="0.001">
+    </testcase>
+    <testcase classname="roleMiddleware fails when user absent" name="roleMiddleware fails when user absent" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="validationHelpers" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:02" time="0.402" tests="4">
+    <testcase classname="validationHelpers validateObjectId pushes error for invalid id" name="validationHelpers validateObjectId pushes error for invalid id" time="0.002">
+    </testcase>
+    <testcase classname="validationHelpers validateObjectId accepts valid hex24" name="validationHelpers validateObjectId accepts valid hex24" time="0.001">
+    </testcase>
+    <testcase classname="validationHelpers throwIfErrors throws with formatted message" name="validationHelpers throwIfErrors throws with formatted message" time="0.019">
+    </testcase>
+    <testcase classname="validationHelpers throwIfErrors does nothing when empty" name="validationHelpers throwIfErrors does nothing when empty" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppError hierarchy" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:02" time="0.361" tests="3">
+    <testcase classname="AppError hierarchy base AppError sets core properties" name="AppError hierarchy base AppError sets core properties" time="0.002">
+    </testcase>
+    <testcase classname="AppError hierarchy ValidationError sets type and 400" name="AppError hierarchy ValidationError sets type and 400" time="0.001">
+    </testcase>
+    <testcase classname="AppError hierarchy AuthorizationError sets type and 403" name="AppError hierarchy AuthorizationError sets type and 403" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="App smoke tests" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:03" time="1.523" tests="3">
+    <testcase classname="App smoke tests GET / should return API status" name="App smoke tests GET / should return API status" time="0.018">
+    </testcase>
+    <testcase classname="App smoke tests GET /healthz should be healthy" name="App smoke tests GET /healthz should be healthy" time="0.012">
+    </testcase>
+    <testcase classname="App smoke tests GET /api should return running message" name="App smoke tests GET /api should return running message" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="sendExamAnnouncement invalid message" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:04" time="0.397" tests="1">
+    <testcase classname="sendExamAnnouncement invalid message rejects empty/blank message with 400" name="sendExamAnnouncement invalid message rejects empty/blank message with 400" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="submitAnswer validation" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:05" time="0.391" tests="1">
+    <testcase classname="submitAnswer validation returns 400 when questionId or answer missing" name="submitAnswer validation returns 400 when questionId or answer missing" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="generateToken util (mocked)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:05" time="0.395" tests="1">
+    <testcase classname="generateToken util (mocked) returns stable strings given user" name="generateToken util (mocked) returns stable strings given user" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="httpClient exported instances" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:06" time="0.722" tests="1">
+    <testcase classname="httpClient exported instances instances are constructed with serviceName" name="httpClient exported instances instances are constructed with serviceName" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Public routes" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:06" time="1.106" tests="2">
+    <testcase classname="Public routes GET /api should work (sanity)" name="Public routes GET /api should work (sanity)" time="0.013">
+    </testcase>
+    <testcase classname="Public routes GET /non-existent should return 404 JSON" name="Public routes GET /non-existent should return 404 JSON" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="Jest Setup" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:08" time="0.397" tests="3">
+    <testcase classname="Jest Setup should run a simple test" name="Jest Setup should run a simple test" time="0.001">
+    </testcase>
+    <testcase classname="Jest Setup should handle async tests" name="Jest Setup should handle async tests" time="0.001">
+    </testcase>
+    <testcase classname="Jest Setup should have test environment set" name="Jest Setup should have test environment set" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="config/security branches (placeholder)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:08" time="0.355" tests="1">
+    <testcase classname="config/security branches (placeholder) executes a trivial truthy check" name="config/security branches (placeholder) executes a trivial truthy check" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="logger (placeholder)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:08" time="0.351" tests="1">
+    <testcase classname="logger (placeholder) should have a placeholder test" name="logger (placeholder) should have a placeholder test" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="logger report (placeholder)" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:09" time="0.397" tests="1">
+    <testcase classname="logger report (placeholder) should pass placeholder" name="logger report (placeholder) should pass placeholder" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Basic Test" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:09" time="0.352" tests="1">
+    <testcase classname="Basic Test should pass" name="Basic Test should pass" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="sanity" errors="0" failures="0" skipped="0" timestamp="2025-09-18T23:00:10" time="0.353" tests="1">
+    <testcase classname="sanity runs a simple assertion" name="sanity runs a simple assertion" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

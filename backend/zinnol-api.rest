@@ -1,0 +1,880 @@
+# =============================
+# Zinnol Backend API Requests (VS Code REST Client)
+# =============================
+
+# NOTE on port conflicts:
+# - Default base uses port 4000. If this port is in use, either stop the other process
+#   or switch to port 4001 by uncommenting the alt line below.
+# Prefer 127.0.0.1 to match dev CORS/host settings
+@base = http://127.0.0.1:4000
+# @base = http://localhost:4001
+
+# Authorization
+# - Leave this placeholder initially. After running the "Login" request below,
+#   the token will be captured automatically and {{auth}} will be set globally.
+@auth = 
+
+# Refresh cookie (captured after login)
+@refreshCookie = 
+
+# =============================
+# AUTHENTICATION
+# =============================
+
+### Register first Global Super Admin
+# @name registerFirstGlobalAdmin
+POST {{base}}/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Chukwuma7 Nnoli",
+  "email": "zinnol@gmail.com",
+  "password": "Chris4@yahoozinnolbc"
+}
+
+### Login (auto-sets {{auth}} for subsequent requests)
+# @name login
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@zinnol.com",
+  "password": "AdminZ1nn0l!2025"
+}
+
+> {%
+  client.test("Login succeeds with accessToken", function() {
+    client.assert(response.status === 200, "Should return 200 OK");
+    const hasWrapped = response.body && response.body.data && response.body.data.accessToken;
+    const hasFlat = response.body && response.body.accessToken;
+    client.assert(hasWrapped || hasFlat, "Response should include accessToken (flat or wrapped in data)");
+  });
+  const token = (response.body && response.body.data && response.body.data.accessToken) || (response.body && response.body.accessToken);
+  if (token) {
+    client.global.set("auth", "Bearer " + token);
+    // Optional: also store raw token if needed
+    client.global.set("accessToken", token);
+  }
+%}
+
+### Refresh token (uses HttpOnly cookie `refreshToken`)
+# @name refreshToken
+# Note: The server expects the refresh JWT in an HttpOnly cookie named `refreshToken`.
+# VS Code REST Client does not automatically send HttpOnly cookies across requests.
+# The snippet below captures the Set-Cookie header after `login` and injects the cookie
+# into the `refresh` request using a `Cookie` header. Alternatively use a browser or curl
+# with a cookie jar for end-to-end testing.
+POST {{base}}/api/users/refresh
+Content-Type: application/json
+
+{}
+
+> {%
+  client.test("Refresh succeeds with accessToken", function() {
+    client.assert(response.status === 200, "Should return 200 OK");
+    client.assert(response.body && response.body.accessToken, "Response should include accessToken");
+  });
+  const token = response.body && response.body.accessToken;
+  if (token) {
+    client.global.set("auth", "Bearer " + token);
+    client.global.set("accessToken", token);
+  }
+%}
+
+# --- Helper: capture Set-Cookie after login and store cookie value in `refreshCookie` ---
+### Capture cookie after login (run immediately after the `login` request)
+> {%
+  // Extract refreshToken cookie from response headers and save raw token value.
+  const setCookie = response.headers['set-cookie'] || response.headers['Set-Cookie'];
+  if (setCookie && setCookie.length) {
+    // find cookie that starts with refreshToken=
+    const cookieHeader = Array.isArray(setCookie) ? setCookie.join(';') : setCookie;
+    const match = cookieHeader.match(/refreshToken=([^;\s]+)/);
+    if (match) {
+      client.global.set('refreshCookie', match[1]);
+    }
+  }
+%}
+
+### Refresh (cookie-injected example)
+# @name refreshWithCookie
+POST {{base}}/api/users/refresh
+Content-Type: application/json
+Cookie: refreshToken={{refreshCookie}}
+
+{}
+
+> {%
+  client.test("Refresh-with-cookie succeeds", function() {
+    client.assert(response.status === 200, "Should return 200 OK");
+    client.assert(response.body && response.body.accessToken, "Response should include accessToken");
+  });
+  const token = response.body && response.body.accessToken;
+  if (token) {
+    client.global.set("auth", "Bearer " + token);
+    client.global.set("accessToken", token);
+  }
+%}
+
+# Notes on tokens
+# - The access token above is short-lived (~1 hour). When it expires:
+#   1) POST /api/users/login to receive a new accessToken, or
+#   2) If refresh tokens are enabled, call POST /api/users/refresh (body: {}).
+# - The "Login" and "Refresh token" requests above auto-populate {{auth}} on success.
+
+# Quick token generation (local dev)
+# node backend/scripts/generate_long_token.cjs --id=<userId> --role=<ROLE> --days=0.0416667
+# Example:
+# node backend/scripts/generate_long_token.cjs --id=68c16aaf87b6ced34c95cc08 --role=GLOBAL_SUPER_ADMIN --days=0.0416667
+
+### Get current user (me)
+# @name me
+GET {{base}}/api/users/me
+Authorization: {{auth}}
+
+
+# =============================
+# HEALTH & STATUS
+# =============================
+
+### Liveness probe
+# @name healthz
+GET {{base}}/healthz
+
+### Readiness probe
+# @name readyz
+GET {{base}}/readyz
+
+### Metrics
+# @name metrics
+GET {{base}}/metrics
+
+
+# =============================
+# USERS
+# =============================
+
+### Get all users (Admins only)
+# @name getUsers
+GET {{base}}/api/users
+Authorization: {{auth}}
+
+### Create a new user (Admins only)
+# @name createUser
+POST {{base}}/api/users
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "New Admin",
+  "email": "new.admin@example.com",
+  "password": "Passw0rd@1",
+  "role": "SUPER_ADMIN",
+  "school": "<optional_school_id>"  
+}
+
+### Get a user by ID
+# @name getUserById
+GET {{base}}/api/users/<user_id>
+Authorization: {{auth}}
+
+### Update a user by ID
+# @name updateUser
+PUT {{base}}/api/users/<user_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "email": "updated@example.com",
+  "role": "PRINCIPAL",
+  "password": "NewPass@123"
+}
+
+### Delete a user by ID (Global admin only)
+# @name deleteUser
+DELETE {{base}}/api/users/<user_id>
+Authorization: {{auth}}
+
+
+# =============================
+# SCHOOLS
+# =============================
+
+### Public: Get active schools with locations
+# @name publicSchoolsWithLocations
+GET {{base}}/api/schools/locations
+
+### Get all schools (Global Admin)
+# @name getSchools
+GET {{base}}/api/schools
+Authorization: {{auth}}
+
+### Create a school (Global/Main Super Admin)
+# @name createSchool
+POST {{base}}/api/schools
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Kings & Queens School",
+  "address": "123 Main St",
+  "phone": "123-456-7890",
+  "email": "school1@example.com"
+}
+
+### Get a school by ID
+# @name getSchoolById
+GET {{base}}/api/schools/<school_id>
+Authorization: {{auth}}
+
+### Update a school by ID (Global/Main Super Admin)
+# @name updateSchool
+PUT {{base}}/api/schools/<school_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Updated School Name",
+  "email": "updatedschool@example.com"
+}
+
+### Delete a school by ID (Global Admin)
+# @name deleteSchool
+DELETE {{base}}/api/schools/<school_id>
+Authorization: {{auth}}
+
+
+# =============================
+# PUBLIC
+# =============================
+
+### Get shared analytics report (Public)
+# @name getSharedAnalytics
+GET {{base}}/api/public/analytics/<token>
+
+
+# =============================
+# STUDENTS
+# =============================
+
+### List students (Admins/Principals/Teachers)
+# @name getStudents
+GET {{base}}/api/students
+Authorization: {{auth}}
+
+### Create a student (Admins/Principals) - JSON example
+# @name createStudentJson
+POST {{base}}/api/students
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "classroom": "<classroom_id>",
+  "admissionNumber": "ADM001",
+  "firstName": "John",
+  "lastName": "Doe",
+  "gender": "male",
+  "dateOfBirth": "2015-01-01"
+}
+
+# Note: `school` is derived from the authenticated user's account and should NOT be supplied in the body.
+# For passport upload, use multipart/form-data:
+# Example shows referencing a local file via REST Client. Replace ./photo.jpg with a real path.
+
+### Create a student (multipart/form-data example)
+# @name createStudentMultipart
+POST {{base}}/api/students
+Authorization: {{auth}}
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="classroom"
+
+<classroom_id>
+--WebAppBoundary
+Content-Disposition: form-data; name="admissionNumber"
+
+ADM002
+--WebAppBoundary
+Content-Disposition: form-data; name="firstName"
+
+Jane
+--WebAppBoundary
+Content-Disposition: form-data; name="lastName"
+
+Doe
+--WebAppBoundary
+Content-Disposition: form-data; name="gender"
+
+female
+--WebAppBoundary
+Content-Disposition: form-data; name="passport"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+< ./photo.jpg
+--WebAppBoundary--
+
+### Get a student by ID (Admins/Principals/Teachers)
+# @name getStudentById
+GET {{base}}/api/students/<student_id>
+Authorization: {{auth}}
+
+### Update a student by ID (Admins/Principals)
+# @name updateStudent
+PUT {{base}}/api/students/<student_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "firstName": "Johnny",
+  "email": "johnny.doe@example.com"
+}
+
+### Delete a student by ID (Admins/Principals)
+# @name deleteStudent
+DELETE {{base}}/api/students/<student_id>
+Authorization: {{auth}}
+
+
+# =============================
+# CLASSES
+# =============================
+
+### Get classrooms (Authenticated school users)
+# @name getClasses
+GET {{base}}/api/classes
+Authorization: {{auth}}
+
+### Create a classroom (Admins/Principals)
+# @name createClass
+POST {{base}}/api/classes
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "JSS 1A",
+  "level": "jss1",
+  "teacherId": "<teacher_id>"
+}
+
+### Update a classroom (Admins/Principals)
+# @name updateClass
+PUT {{base}}/api/classes/<class_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "JSS 1B",
+  "level": "jss1",
+  "teacherId": "<teacher_id>"
+}
+
+### Delete a classroom (Admins/Principals)
+# @name deleteClass
+DELETE {{base}}/api/classes/<class_id>
+Authorization: {{auth}}
+
+
+# =============================
+# SUBJECTS
+# =============================
+
+### Get subjects
+# @name getSubjects
+GET {{base}}/api/subjects
+Authorization: {{auth}}
+
+### Create subject (Admins/Principal)
+# @name createSubject
+POST {{base}}/api/subjects
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Mathematics",
+  "code": "MTH"
+}
+
+### Update subject
+# @name updateSubject
+PUT {{base}}/api/subjects/<subject_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "name": "Advanced Mathematics"
+}
+
+### Delete subject
+# @name deleteSubject
+DELETE {{base}}/api/subjects/<subject_id>
+Authorization: {{auth}}
+
+
+# =============================
+# CALENDAR
+# =============================
+
+### Get events by year for a school
+# @name getCalendarByYear
+GET {{base}}/api/calendar/<school_id>/year/<year>
+Authorization: {{auth}}
+
+### Create calendar event (Admins/Principal)
+# @name createCalendarEvent
+POST {{base}}/api/calendar
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "school": "<school_id>",
+  "title": "Event Title",
+  "description": "Event Description",
+  "startDate": "2025-09-10T09:00:00Z",
+  "endDate": "2025-09-20T14:00:00Z",
+  "type": "EXAM"
+}
+
+### Update calendar event
+# @name updateCalendarEvent
+PUT {{base}}/api/calendar/<event_id>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "title": "Updated Event Title",
+  "description": "Updated description",
+  "startDate": "2025-09-11T09:00:00Z",
+  "endDate": "2025-09-21T14:00:00Z",
+  "type": "HOLIDAY"
+}
+
+### Delete calendar event
+# @name deleteCalendarEvent
+DELETE {{base}}/api/calendar/<event_id>
+Authorization: {{auth}}
+
+
+# =============================
+# TIMETABLES
+# =============================
+
+### Get timetables (Authenticated users)
+# @name getTimetables
+GET {{base}}/api/timetables?classroomId=<classroom_id>&schoolId=<school_id>
+Authorization: {{auth}}
+
+### Create a timetable entry (Admins/Principals)
+# @name createTimetable
+POST {{base}}/api/timetables
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "school": "<school_id>",
+  "classroom": "<classroom_id>",
+  "subject": "<subject_id>",
+  "teacher": "<teacher_id>",
+  "dayOfWeek": 1,
+  "startTime": "09:00",
+  "endTime": "10:00"
+}
+
+### Delete a timetable entry (Admins/Principals)
+# @name deleteTimetable
+DELETE {{base}}/api/timetables/<timetable_id>
+Authorization: {{auth}}
+
+
+# =============================
+# EXAMS
+# =============================
+
+### List exams (Teachers/Admins)
+# @name getExams
+GET {{base}}/api/exams
+Authorization: {{auth}}
+
+### Create an exam (Teachers/Admins)
+# @name createExam
+POST {{base}}/api/exams
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "classroom": "<classroom_id>",
+  "title": "Midterm",
+  "session": "2024/2025",
+  "term": 1,
+  "subject": "<subject_id>",
+  "durationInMinutes": 60
+}
+
+### Add a question to an exam (Teachers/Admins)
+# @name addExamQuestion
+POST {{base}}/api/exams/<exam_id>/questions
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "questionText": "2 + 2 = ?",
+  "questionType": "objective",
+  "marks": 5,
+  "options": [ { "text": "3" }, { "text": "4" } ],
+  "correctOptionIndex": 1
+}
+
+
+# =============================
+# RESULTS
+# =============================
+
+### Submit a result (Teacher/Principal/Admins)
+# @name submitResult
+POST {{base}}/api/results
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "student": "<student_id>",
+  "subject": "<subject_id>",
+  "score": 85,
+  "term": 1,
+  "session": "2024/2025"
+}
+
+### Approve a result (Principal) [feature approve-reject-results must be enabled]
+# @name approveResult
+PATCH {{base}}/api/results/<result_id>/approve
+Authorization: {{auth}}
+
+### Reject a result (Principal)
+# @name rejectResult
+PATCH {{base}}/api/results/<result_id>/reject
+Authorization: {{auth}}
+
+### Get results for a student
+# @name getResultsByStudent
+GET {{base}}/api/results/student/<student_id>
+Authorization: {{auth}}
+
+### Get all results (Principal/Admin)
+# @name getAllResults
+GET {{base}}/api/results
+Authorization: {{auth}}
+
+
+# =============================
+# ANALYTICS
+# =============================
+
+### Get main super admin overview (Main Super Admin)
+# @name getMainSuperAdminOverview
+GET {{base}}/api/analytics/main-super-admin-overview
+Authorization: {{auth}}
+
+### Get global overview (Global Super Admin)
+# @name getGlobalOverview
+GET {{base}}/api/analytics/global-overview
+Authorization: {{auth}}
+
+### Get system-wide analytics (Global Super Admin)
+# @name getSystemWideAnalytics
+GET {{base}}/api/analytics/system-wide
+Authorization: {{auth}}
+
+### Get student analytics (Authorized roles)
+# @name getStudentAnalytics
+GET {{base}}/api/analytics/student/<student_id>
+Authorization: {{auth}}
+
+### Get teacher analytics (Super Admins)
+# @name getTeacherAnalytics
+GET {{base}}/api/analytics/teacher/<teacher_id>
+Authorization: {{auth}}
+
+### Get school dashboard analytics (Admins/Principals)
+# @name getSchoolDashboardAnalytics
+GET {{base}}/api/analytics/school-dashboard
+Authorization: {{auth}}
+
+### Query students (Admins/Principals)
+# @name queryStudents
+GET {{base}}/api/analytics/query-students?q=<query>&page=1&limit=10
+Authorization: {{auth}}
+
+### Create shareable analytics link (Admins/Principals)
+# @name createShareableLink
+POST {{base}}/api/analytics/create-shareable-link
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "type": "school-dashboard",
+  "expiresInHours": 24
+}
+
+### Get teacher activity analytics (Admins/Principals)
+# @name getTeacherActivityAnalytics
+GET {{base}}/api/analytics/teacher-activity
+Authorization: {{auth}}
+
+### Get timetable compliance (Admins/Principals)
+# @name getTimetableCompliance
+GET {{base}}/api/analytics/timetable-compliance
+Authorization: {{auth}}
+
+### Get school academic terms (Admins/Principals)
+# @name getSchoolAcademicTerms
+GET {{base}}/api/analytics/school-academic-terms
+Authorization: {{auth}}
+
+### Get all academic sessions (Admins/Principals)
+# @name getAllAcademicSessions
+GET {{base}}/api/analytics/all-academic-sessions
+Authorization: {{auth}}
+
+### Get classroom leaderboard (Admins/Principals)
+# @name getClassroomLeaderboard
+GET {{base}}/api/analytics/classroom-leaderboard
+Authorization: {{auth}}
+
+### Get declining students (Admins/Principals)
+# @name getDecliningStudents
+GET {{base}}/api/analytics/declining-students
+Authorization: {{auth}}
+
+### Get student exam history (Admins/Principals)
+# @name getStudentExamHistory
+GET {{base}}/api/analytics/student-exam-history/<student_id>
+Authorization: {{auth}}
+
+
+# =============================
+# SEARCH
+# =============================
+
+### Search codebase (Public or Authenticated?)
+# @name searchCodebase
+GET {{base}}/api/search?q=<search_query>
+Authorization: {{auth}}
+
+
+# =============================
+# SCHOOL FEATURES
+# =============================
+
+### Get features for a school (Global Super Admin)
+# @name getFeaturesForSchool
+GET {{base}}/api/school-features/<school_id>/features
+Authorization: {{auth}}
+
+### Set all features for a school (Global Super Admin)
+# @name setAllFeaturesForSchool
+PATCH {{base}}/api/school-features/<school_id>/features/all
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "enabled": true
+}
+
+### Set individual feature for a school (Global Super Admin)
+# @name setFeatureForSchool
+PATCH {{base}}/api/school-features/<school_id>/features/<feature_name>
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "enabled": true
+}
+
+
+# =============================
+# VOICE RESULTS
+# =============================
+
+### Voice result entry (Teachers)
+# @name voiceResultEntry
+POST {{base}}/api/voice-results/voice-entry
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "student": "John Doe",
+  "subject": "Mathematics",
+  "score": 85
+}
+
+
+# =============================
+# TEACHER ACTIVITIES
+# =============================
+
+### Start a teaching session (Teachers)
+# @name startTeacherSession
+POST {{base}}/api/teacher-activities/start
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "classroomId": "<classroom_id>",
+  "subjectId": "<subject_id>",
+  "topic": "Introduction to Algebra"
+}
+
+### End a teaching session (Teachers)
+# @name endTeacherSession
+PATCH {{base}}/api/teacher-activities/<activity_id>/end
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "feedbackNote": "This is a detailed feedback note with at least 100 words. The session covered basic algebra concepts including variables, equations, and simple problem-solving techniques. Students were engaged and participated actively in the exercises. We discussed real-world applications of algebra in everyday life, such as budgeting and geometry. Homework was assigned to practice solving linear equations. Overall, the class showed good understanding of the material, though some students needed extra help with word problems. Future sessions will build on this foundation with more advanced topics. The classroom environment was conducive to learning, with all necessary materials available. Student attendance was high, and there were no major disruptions. I encouraged questions and provided individual attention where needed. This approach helped in reinforcing the key concepts effectively."
+}
+
+### Get teacher activities (Authorized roles)
+# @name getTeacherActivities
+GET {{base}}/api/teacher-activities?page=1&limit=10
+Authorization: {{auth}}
+
+
+# =============================
+# NOTIFICATIONS
+# =============================
+
+### Get my notifications
+# @name getMyNotifications
+GET {{base}}/api/notifications/me
+Authorization: {{auth}}
+
+### Mark notification as read
+# @name markNotificationRead
+PATCH {{base}}/api/notifications/<notification_id>/read
+Authorization: {{auth}}
+
+### Send push notification (Global/Main Super Admin)
+# @name sendPushNotification
+POST {{base}}/api/notifications/send
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "token": "<device_fcm_token>",
+  "title": "Hello",
+  "body": "World"
+}
+
+
+# =============================
+# BUSER TRANSACTIONS
+# =============================
+
+### Create a Buser Transaction (any logged-in user)
+# @name createBuserTransaction
+POST {{base}}/api/buser-transactions
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "item": "Uniform",
+  "student": "<student_id>",
+  "parent": "<parent_id>",
+  "amount": 5000,
+  "school": "<school_id>"
+}
+
+### Get All Buser Transactions (Buser Admin, Global/Main Super Admin)
+# @name getBuserTransactions
+GET {{base}}/api/buser-transactions
+Authorization: {{auth}}
+
+### Get Single Buser Transaction
+# @name getBuserTransactionById
+GET {{base}}/api/buser-transactions/<transaction_id>
+Authorization: {{auth}}
+
+### Update Buser Transaction Status (Buser Admin only)
+# @name updateBuserTransactionStatus
+PUT {{base}}/api/buser-transactions/<transaction_id>/status
+Authorization: {{auth}}
+Content-Type: application/json
+
+{
+  "status": "approved"
+}
+
+### Delete Buser Transaction (Buser Admin, Global/Main Super Admin)
+# @name deleteBuserTransaction
+DELETE {{base}}/api/buser-transactions/<transaction_id>
+Authorization: {{auth}}
+
+
+# =============================
+# PREDICTIVE ANALYTICS
+# =============================
+
+### Get prediction accuracy (Global/Main Super Admin)
+# @name predictAccuracy
+GET {{base}}/api/predict/accuracy
+Authorization: {{auth}}
+
+### School risk dashboard (Admins/Principals)
+# Replace <school_id> with a real ID from the Schools list
+# @name predictSchoolDashboard
+GET {{base}}/api/predict/school-dashboard?schoolId=<school_id>&session=2024-2025
+Authorization: {{auth}}
+
+### Student decline prediction (requires session & valid studentId)
+# @name predictStudent
+GET {{base}}/api/predict/student/<student_id>?session=2024-2025
+Authorization: {{auth}}
+
+### Classroom decline predictions (requires session & valid classroomId)
+# @name predictClassroom
+GET {{base}}/api/predict/classroom/<classroom_id>?session=2024-2025
+Authorization: {{auth}}
+
+
+# =============================
+# WEBAUTHN (BIOMETRIC)
+# =============================
+
+### Start biometric registration (get challenge)
+# @name webauthnRegisterStart
+POST {{base}}/api/webauthn/register
+Content-Type: application/json
+
+{
+  "username": "testuser"
+}
+
+### Verify biometric registration (send attestation response)
+# @name webauthnRegisterVerify
+POST {{base}}/api/webauthn/register/verify
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "attestationResponse": {}
+}
+
+### Start biometric authentication (get challenge)
+# @name webauthnAuthStart
+POST {{base}}/api/webauthn/authenticate
+Content-Type: application/json
+
+{
+  "username": "testuser"
+}
+
+### Verify biometric authentication (send assertion response)
+# @name webauthnAuthVerify
+POST {{base}}/api/webauthn/authenticate/verify
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "assertionResponse": {}
+}

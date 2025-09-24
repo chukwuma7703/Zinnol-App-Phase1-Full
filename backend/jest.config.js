@@ -1,0 +1,123 @@
+export default {
+  testEnvironment: 'node',
+  roots: ['<rootDir>'],
+  testMatch: [
+    '**/test/**/*.test.js'
+  ],
+  transform: {
+    '^.+\.[jt]sx?$': ['babel-jest', {
+      presets: [
+        ['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }],
+        '@babel/preset-react'
+      ],
+      plugins: [
+        '@babel/plugin-syntax-jsx'
+      ]
+    }]
+  },
+  transformIgnorePatterns: [
+    '/node_modules/(?!google-auth-library|googleapis|@google/vision|@google/generative-ai|@google-cloud|openai|axios|@sentry|node-fetch).+\.js$'
+  ],
+  moduleNameMapper: {
+    '^(.*)/config/socket\.js$': '<rootDir>/test/mocks/socketMock.js',
+    '^.*config/monitoring\.js$': '<rootDir>/test/mocks/monitoringMock.js',
+    '^node-cron$': '<rootDir>/test/mocks/cronMock.js',
+    '^swagger-ui-express$': '<rootDir>/test/mocks/swaggerMock.js',
+    '^googleapis$': '<rootDir>/test/mocks/googleapisMock.js',
+    '\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '^.*utils/logger\.js$': '<rootDir>/test/mocks/loggerMock.js',
+    '^bullmq$': '<rootDir>/test/mocks/bullmqMock.js',
+  },
+  collectCoverageFrom: [
+    'controllers/**/*.js',
+    'models/**/*.js',
+    'services/**/*.js',
+    'utils/**/*.js',
+    'middleware/**/*.js',
+    'routes/**/*.js',
+    'config/**/*.js',
+    'server.js',
+    '!**/utils/sendEmail.js',
+    '!**/*.test.js',
+    '!**/*.spec.js',
+    '!**/node_modules/**',
+    '!**/test/**',
+    '!**/coverage/**',
+    '!jest.config.js',
+    '!**/migrations/**',
+    '!**/scripts/**',
+    '!eslint.config.js',
+    '!babel.config.js',
+    '!prettier.config.cjs',
+    '!postcss.config.js',
+    '!tailwind.config.js',
+    '!vite.config.js',
+    '!**/firebaseInit.js',
+    '!**/seedFeatures.js',
+    '!**/weatherUpdater.js',
+    '!**/geocode.js',
+    '!*.config.js',
+    '!*.config.cjs',
+    '!**/auto_test.js',
+    '!**/benchmark.js',
+    '!**/cleanup.js',
+    '!**/generate-coverage-report.js',
+    '!**/test-*.js',
+    '!**/weatherUtils.js',
+    '!**/worker.js'
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 85,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
+  },
+  testTimeout: 30000,
+  verbose: true,
+  // Key settings to prevent hanging
+  forceExit: true,
+  detectOpenHandles: true,
+  maxWorkers: 1,
+  clearMocks: true,
+  resetMocks: false,
+  restoreMocks: false,
+  modulePathIgnorePatterns: ['<rootDir>/__mocks__'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/test/generated/',
+    '<rootDir>/test/automated/',
+    '<rootDir>/test/route-smoke/',
+    '<rootDir>/test/utils/sendEmail.unit.test.js',
+    '<rootDir>/controllers/examController.test.js',
+    '<rootDir>/controllers/*integration*.test.js',
+    '<rootDir>/test/auth.login.test.js',
+    '<rootDir>/test/school.student.deprecated.test.js',
+    '<rootDir>/test/services/predictiveAnalytics.test.js',
+    'test/auth.refreshToken.test.js',
+    'test/comprehensive.test.js',
+    'test/controllers/mainSuperAdminController.test.js',
+    'test/controllers/assignmentController.test.js',
+    'test/result.voicenote.test.js',
+    'test/school.student.update.test.js',
+    'test/buserTransaction.controller.test.js',
+    'test/models/examModel.test.js',
+    'test/unit/config/cache.unit.test.js',
+    'test/integration/auth.integration.test.js',
+    'test/user.management.test.js',
+    'test/school.management.test.js',
+    'test/controllers/voiceResultController.test.js',
+    'test/school.student.test.js',
+  ],
+  setupFilesAfterEnv: ['<rootDir>/test/setup.js'],
+  globalSetup: '<rootDir>/test/globalSetup.js',
+  globalTeardown: '<rootDir>/test/teardown.js',
+  testEnvironmentOptions: {
+    NODE_ENV: 'test',
+  },
+  // Additional settings to prevent hanging
+  bail: false,
+  cache: false,
+  watchman: false,
+};

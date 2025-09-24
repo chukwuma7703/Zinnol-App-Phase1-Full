@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Zinnol Backend API",
+    "dateExported": "2025-08-26",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+      {
+        "name": "Register (Global Super Admin)",
+        "url": "http://localhost:4000/api/users/register",
+        "method": "POST",
+        "headers": [
+          { "name": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"name\": \"Admin\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"123456\"\n}"
+        }
+      },
+      {
+        "name": "Login",
+        "url": "http://localhost:4000/api/users/login",
+        "method": "POST",
+        "headers": [
+          { "name": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"123456\"\n}"
+        }
+      },
+      {
+        "name": "Get Users",
+        "url": "http://localhost:4000/api/users",
+        "method": "GET",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer {{token}}" }
+        ]
+      },
+      {
+        "name": "Create School",
+        "url": "http://localhost:4000/api/schools",
+        "method": "POST",
+        "headers": [
+          { "name": "Content-Type", "value": "application/json" },
+          { "name": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": {
+          "type": "json",
+          "raw": "{\n  \"name\": \"Zinnol Academy\",\n  \"address\": \"123 Main Street\"\n}"
+        }
+      }
+    ],
+    "variables": [
+      {
+        "name": "token",
+        "value": ""
+      }
+    ]
+  }
+  

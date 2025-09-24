@@ -1,0 +1,83 @@
+# Environment variables
+.env
+.env.*
+*.env
+zinnol.env
+.env.local
+.env.production
+.env.test
+
+# Security & Credentials
+serviceAccountKey.json
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+credentials/
+secrets/
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+tmp/
+temp/
+uploads/
+!uploads/.gitkeep
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Cache
+.cache/
+.redis/
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Documentation build
+docs/_build/
+api-docs/

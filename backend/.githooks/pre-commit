@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Pre-commit hook for Zinnol Backend
+# Ensures code quality before commits
+
+set -e
+
+echo "🔍 Running pre-commit validation..."
+
+# Check if we're in the backend directory
+if [ ! -f "package.json" ]; then
+    echo "❌ Not in backend directory, skipping tests"
+    exit 0
+fi
+
+# Run linting
+echo "📝 Running ESLint..."
+if ! npm run lint; then
+    echo "❌ Linting failed. Please fix the issues before committing."
+    exit 1
+fi
+
+# Run smoke tests for fast feedback
+echo "🚀 Running smoke tests..."
+if ! npm run test:smoke; then
+    echo "❌ Smoke tests failed. Please fix the issues before committing."
+    exit 1
+fi
+
+# Run unit tests
+echo "🧪 Running unit tests..."
+if ! npm run test:unit; then
+    echo "❌ Unit tests failed. Please fix the issues before committing."
+    exit 1
+fi
+
+echo "✅ All pre-commit checks passed!"
+echo "💡 Tip: Run './run-optimized-tests.sh full' before pushing for complete validation"

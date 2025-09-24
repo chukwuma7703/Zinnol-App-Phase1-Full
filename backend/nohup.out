@@ -1,0 +1,6 @@
+{"t":{"$date":"2025-09-21T15:02:23.913+01:00"},"s":"I",  "c":"-",        "id":8991200, "ctx":"thread1","msg":"Shuffling initializers","attr":{"seed":2978745312}}
+BadValue: Server fork+exec via `--fork` or `processManagement.fork` is incompatible with macOS
+try '/usr/local/bin/mongod --help' for more information
+{"t":{"$date":"2025-09-21T15:04:24.202+01:00"},"s":"I",  "c":"-",        "id":8991200, "ctx":"thread1","msg":"Shuffling initializers","attr":{"seed":3024654554}}
+BadValue: Server fork+exec via `--fork` or `processManagement.fork` is incompatible with macOS
+try '/usr/local/bin/mongod --help' for more information

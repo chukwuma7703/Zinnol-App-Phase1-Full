@@ -1,0 +1,14 @@
+# Zinnol App Login REST Example
+
+# STEP 1: Login with your registered email and password
+# - Use the same email and password you registered with.
+# - Click 'Send Request' above to login and get your access token.
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "christianchukwuma1993@gmail.com",
+  "password": "Chris4@yahoozinnolA"
+}
+
+###
