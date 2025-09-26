@@ -8,11 +8,12 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import mongoSanitize from 'express-mongo-sanitize';
 import hpp from 'hpp';
+import multer from 'multer';
 import { execSync } from 'child_process';
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
-const pkg = require("../package.json");
+const pkg = require("./package.json");
 
 // Routes
 import userRoutes from "./routes/userRoutes.js";
@@ -114,6 +115,8 @@ const helmetConfig = process.env.NODE_ENV === 'production'
   }
   : {
     contentSecurityPolicy: false, // Disable CSP in development
+    crossOriginOpenerPolicy: { policy: 'same-origin-allow-popups' }, // Allow OAuth popups
+    crossOriginEmbedderPolicy: false, // Disable COEP in development for OAuth
   };
 
 app.use(helmet(helmetConfig));
@@ -206,11 +209,14 @@ if (process.env.NODE_ENV !== 'production' || process.env.ENABLE_SWAGGER === 'tru
 // --- Health and Monitoring Endpoints ---
 app.get("/healthz", (req, res) => {
   res.status(200).json({
-    status: "healthy",
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-    environment: process.env.NODE_ENV,
-    version: process.env.npm_package_version || '1.0.0',
+    success: true,
+    data: {
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      environment: process.env.NODE_ENV,
+      version: process.env.npm_package_version || '1.0.0',
+    }
   });
 });
 
@@ -234,18 +240,26 @@ app.get("/version", (req, res) => {
 app.get("/readyz", async (req, res) => {
   try {
     const checks = await detailedHealthCheck();
-    const isReady = checks.cache?.status === 'connected';
+    // For readiness, we consider the app ready if database is connected
+    // Cache is optional for basic functionality
+    const isReady = checks.database?.status === 'connected';
 
     return res.status(isReady ? 200 : 503).json({
-      status: isReady ? "ready" : "not ready",
-      ...checks,
+      success: isReady,
+      data: {
+        status: isReady ? "ready" : "not ready",
+        ...checks,
+      }
     });
   } catch (error) {
     // Fall back to a safe error response without crashing the request lifecycle
     return res.status(503).json({
-      status: 'unhealthy',
-      error: error?.message || 'Health check failed',
-      timestamp: new Date().toISOString(),
+      success: false,
+      data: {
+        status: 'unhealthy',
+        error: error?.message || 'Health check failed',
+        timestamp: new Date().toISOString(),
+      }
     });
   }
 });
@@ -324,6 +338,37 @@ app.use('/api/drive', protect, googleDriveRoutes);
 app.use('/api/grading', protect, gradeScaleRoutes);
 app.use('/api/global-admin', globalAdminRoutes);
 app.use('/api/settings', settingsRoutes);
+
+// Test upload route for file validation
+const upload = multer({
+  limits: { fileSize: 3 * 1024 * 1024 }, // 3MB
+  fileFilter: (req, file, cb) => {
+    if (!file.mimetype.startsWith("image/")) {
+      return cb(new Error("Only image files are allowed"), false);
+    }
+    cb(null, true);
+  }
+});
+
+app.post('/api/upload/image', protect, (req, res, next) => {
+  const multerUpload = upload.single('file');
+
+  multerUpload(req, res, (err) => {
+    if (err) {
+      // Handle multer errors
+      if (err instanceof multer.MulterError) {
+        if (err.code === 'LIMIT_FILE_SIZE') {
+          return res.status(400).json({ success: false, message: 'File too large' });
+        }
+      }
+      // Handle custom file filter errors
+      return res.status(400).json({ success: false, message: err.message });
+    }
+
+    // If no error, file uploaded successfully
+    res.json({ success: true, message: 'File uploaded successfully' });
+  });
+});
 
 // API usage tracking for authenticated routes
 app.use(apiUsageTracker);
