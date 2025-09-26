@@ -1,8 +1,11 @@
+[build]
+source_dir = "backend"
+
 [phases.setup]
 nixPkgs = ["nodejs"]
 
 [phases.build]
-cmds = ["cd backend && npm install"]
+cmds = ["npm install"]
 
 [start]
-cmd = "cd backend && npm start"
+cmd = "npm start"
