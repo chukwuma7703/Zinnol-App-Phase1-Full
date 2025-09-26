@@ -79,7 +79,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 const PORT = process.env.PORT || 4000;
-const HOST = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1';
+const HOST = '0.0.0.0';
 
 if (process.env.NODE_ENV !== 'test') {
   const runningServer = server.listen(PORT, HOST, () => {
