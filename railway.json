@@ -1,6 +1,6 @@
 {
     "build": {
-        "builder": "DOCKER"
+        "builder": "docker"
     },
     "deploy": {
         "rootDirectory": "."
